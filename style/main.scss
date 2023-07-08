@@ -1,0 +1,179 @@
+@font-face {
+    font-family: 'iranyekan';
+    src:url('../font/Qs_Iranyekanmedium.ttf') format('truetype');
+        
+}
+@font-face {
+    font-family: 'iranyekanvbold';
+    src:url('../font/Qs_Iranyekanbold.ttf') format('truetype');    
+}
+@font-face {
+    font-family: 'Iranyekanextrabold';
+    src:url('../font/Qs_Iranyekanextrabold.ttf') format('truetype');    
+}
+$headcolor:#FBFBFB;
+$bordercolor:#C5C5C5;
+$mainfont:'iranyekan';
+$titlefont:'Iranyekanextrabold';
+$maincolor:#3617F8;
+$archivecolor:#E3F6FB;
+$mainhovercolor:#1f0c96;
+$secondcolor:#C83232;
+@mixin center{
+    display: block;
+    margin-right: auto;
+    margin-left:auto;
+}
+@mixin mainhover{
+    background: $mainhovercolor;
+    transition: 0.5s;
+}
+main{
+    @include center;
+}
+body{
+    background-color: #fff;
+}
+a{
+    text-decoration: none;
+}
+.sidebar{
+    background-color: $headcolor; 
+    padding-left: 0px !important;
+    padding-right: 0px !important; 
+    border-left: 2px solid $bordercolor;
+    .search-side{
+        display: inline-flex;   
+        form{
+            padding: 3px;
+            margin-bottom: 13px;
+            margin-top: 22px;
+            margin-right: 20px;
+            background-color: white;
+            border-radius: 10px;
+            border:1px solid $bordercolor;
+            input{
+                border: none;
+                padding: 4px;
+                background-color:white;
+                font-family: $mainfont;
+                font-size: 14px;
+                width: 246px;
+            }
+            button{
+                background: black;
+                padding: 5px;
+                border-radius: 10px;
+                border: none;
+            }
+        }
+        .look{
+            background: $maincolor;
+            padding: 5px;
+            border-radius: 10px;
+            border: none;
+            height: 100%;
+            margin-right: 10px;
+            margin-top: 27px;
+            transition: 0.5s;
+            :hover{
+                @include mainhover;
+            }
+        }
+    }
+    .archives{
+        background-color: $archivecolor;
+        padding: 10px;
+        padding-right: 20px;
+        a{
+            color: #535353;
+            font-family: $mainfont;
+            font-weight: 800;
+            font-size: 13px;
+        }
+        a:hover{
+            color: $maincolor; 
+            padding-bottom: 9px;
+            border-bottom: 2px solid $maincolor;
+        }
+    }
+    .contacts{
+        .users{
+            display: inline-flex;
+            margin-top: 15px;
+            background-color: $headcolor;
+            border-bottom: 2px solid $bordercolor;
+            img{
+                margin-right: 15px;
+            }
+            h3{
+                font-size: 16px;
+                font-family: $titlefont;
+            }
+            p{
+                color: #535353;
+                font-family: $mainfont;
+                font-weight: 400;
+                font-size: 12px;
+            }
+        .users :hover{
+            background-color: $archivecolor;
+        }
+        }
+    }
+}
+.content{
+    padding-right: 0px !important; 
+    .chat-head{
+        background-color: $headcolor;  
+        display: inline-flex;   
+        padding: 3px;
+        margin-bottom: 7px;
+        width: 100%;
+        height: 100%;
+        border-bottom:2px solid $bordercolor;
+        height: 81px;
+        .right{
+            width: 65%;
+            display: inline-flex;
+            float: right;
+            justify-content: right;
+        }
+        .left{
+            width: 35%;
+            display: inline-flex;
+            float: left;
+            justify-content: left;
+        }
+        img{
+            border-radius: 50px;
+            width: 60px;
+            height: 60px;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+        h3{
+            margin-top: 25px;
+            margin-right: 20px;
+            font-size: 23px;
+            font-family: $titlefont;
+        }
+        .support-button{
+            background: #C83232;
+            box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.19);
+            height: 50px;
+            margin-top: 15px;
+            width: 130px;
+            color: white;
+            font-family: 'iranyekan';
+            border-radius: 10px;
+            border: none;
+            margin-left: 20px;
+        }
+        .menu{
+            margin-top: 15px;
+            margin-left: 20px;
+        }
+    }
+
+}

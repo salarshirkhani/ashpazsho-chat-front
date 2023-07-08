@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>  
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>داشبورد </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.rtl.min.css" integrity="sha384-gXt9imSW0VcJVHezoNQsP+TNrjYXoGcrqBZJpry9zJt8PCQjobwmhMGaDHTASo9N" crossorigin="anonymous">
+    <link rel="stylesheet" href="style/main.css" media="only screen and (min-width: 1200px)">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="sticky-kit-master/dist/sticky-kit.min.js"></script> 
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>  
+    <main class="container">
+        <div class="row">
+            <div class="col-md-4 sidebar">
+                <div class="search-side">
+                    <form class="search-form" accept="" method="POST">
+                        <input type="text" name="q" id="q" placeholder="جست و جو در چت ها ...">
+                        <button type="submit">
+                            <svg xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 2px;" width="22" height="21" viewBox="0 0 22 21" fill="none">
+                            <ellipse cx="10.0833" cy="9.625" rx="6.41667" ry="6.125" stroke="#CCD2E3" stroke-width="2"/>
+                            <path d="M10.0834 7C9.72224 7 9.36464 7.0679 9.03099 7.19982C8.69735 7.33173 8.39419 7.52509 8.13883 7.76884C7.88347 8.0126 7.68091 8.30198 7.54271 8.62046C7.4045 8.93894 7.33337 9.28028 7.33337 9.625" stroke="#CCD2E3" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M18.3334 17.5L15.5834 14.875" stroke="#CCD2E3" stroke-width="2" stroke-linecap="round"/>
+                          </svg>
+                        </button>
+                    </form>
+                    <button class="look" id="">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.2887 11.1303C4.33444 9.25523 7.29601 5 12.6372 5C17.9785 5 20.94 9.25523 21.9858 11.1303C22.1983 11.5114 22.3046 11.702 22.2928 11.9842C22.2809 12.2665 22.156 12.4521 21.906 12.8232C20.6603 14.6734 17.2537 19 12.6372 19C8.02083 19 4.61419 14.6734 3.36844 12.8232C3.11852 12.4521 2.99357 12.2665 2.98173 11.9842C2.96989 11.702 3.07616 11.5114 3.2887 11.1303ZM12.6372 15C14.2587 15 15.5732 13.6569 15.5732 12C15.5732 10.3431 14.2587 9 12.6372 9C11.0157 9 9.70127 10.3431 9.70127 12C9.70127 13.6569 11.0157 15 12.6372 15Z" fill="#7E869E" fill-opacity="0.25"/>
+                            <path d="M12.6372 5C7.29594 5 4.33437 9.25523 3.28863 11.1303C3.07609 11.5114 2.96982 11.702 2.98166 11.9842C2.9935 12.2665 3.11845 12.4521 3.36837 12.8232C4.61412 14.6734 8.02076 19 12.6372 19C17.2536 19 20.6602 14.6734 21.906 12.8232C22.1559 12.4521 22.2808 12.2665 22.2927 11.9842C22.3045 11.702 22.1983 11.5114 21.9857 11.1303C20.94 9.25523 17.9784 5 12.6372 5Z" stroke="white" stroke-width="1.2"/>
+                            <ellipse cx="12.6373" cy="12" rx="2.93598" ry="3" stroke="white" stroke-width="1.2"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="archives">
+                    <div class="row">
+                        <div class="col-md-4" >
+                            <a href="#" class="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="19" viewBox="0 0 21 19" fill="none">
+                                    <path d="M10.5 3.95834C5.98193 3.95834 3.36828 6.97367 2.30784 8.55584C2.04115 8.95375 1.9078 9.15271 1.92078 9.47847C1.93377 9.80423 2.088 9.99885 2.39647 10.3881C3.63731 11.9539 6.58111 15.0417 10.5 15.0417C14.4189 15.0417 17.3627 11.9539 18.6035 10.3881C18.912 9.99885 19.0662 9.80423 19.0792 9.47847C19.0922 9.15271 18.9589 8.95375 18.6922 8.55584C17.6317 6.97367 15.0181 3.95834 10.5 3.95834Z" stroke="#535353" stroke-width="2"/>
+                                    <ellipse cx="10.5" cy="9.50001" rx="3.5" ry="3.16667" fill="#535353"/>
+                                  </svg>
+                                تازه ترین ها
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="#" class="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+                                    <path d="M2.375 6.375C2.375 4.48938 2.375 3.54657 2.96079 2.96079C3.54657 2.375 4.48938 2.375 6.375 2.375H12.625C14.5106 2.375 15.4534 2.375 16.0392 2.96079C16.625 3.54657 16.625 4.48938 16.625 6.375V12.625C16.625 14.5106 16.625 15.4534 16.0392 16.0392C15.4534 16.625 14.5106 16.625 12.625 16.625H6.375C4.48938 16.625 3.54657 16.625 2.96079 16.0392C2.375 15.4534 2.375 14.5106 2.375 12.625V6.375Z" stroke="#535353" stroke-width="2"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M14.25 7.91666H10.3652C9.54769 7.91666 9.13894 7.91666 8.77139 7.76442C8.40385 7.61217 8.11482 7.32314 7.53676 6.74508L7.50491 6.71323C6.92685 6.13517 6.63782 5.84614 6.27027 5.6939C5.90273 5.54166 5.49398 5.54166 4.67648 5.54166H2.375V12.625C2.375 14.5106 2.375 15.4534 2.96079 16.0392C3.54657 16.625 4.48938 16.625 6.375 16.625H12.625C14.5106 16.625 15.4534 16.625 16.0392 16.0392C16.625 15.4534 16.625 14.5106 16.625 12.625V5.54166C16.625 5.89001 16.625 6.06419 16.6034 6.21012C16.4741 7.08153 15.7899 7.76575 14.9185 7.89501C14.7725 7.91666 14.5984 7.91666 14.25 7.91666ZM5.54167 11.6667C4.98938 11.6667 4.54167 12.1144 4.54167 12.6667C4.54167 13.2189 4.98938 13.6667 5.54167 13.6667H11.875C12.4273 13.6667 12.875 13.2189 12.875 12.6667C12.875 12.1144 12.4273 11.6667 11.875 11.6667H5.54167Z" fill="#535353"/>
+                                  </svg>
+                                  پایان یافته
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="#" class="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="19" viewBox="0 0 16 19" fill="none">
+                                    <path d="M10.6666 16.625V14.875C10.6666 13.9431 10.6666 13.4772 10.5144 13.1096C10.3114 12.6196 9.92205 12.2302 9.43199 12.0272C9.06445 11.875 8.59851 11.875 7.66663 11.875V11.875C6.73474 11.875 6.2688 11.875 5.90126 12.0272C5.4112 12.2302 5.02185 12.6196 4.81887 13.1096C4.66663 13.4772 4.66663 13.9431 4.66663 14.875V16.625" stroke="#535353" stroke-width="2"/>
+                                    <path d="M4.66663 6.33334H7.99996" stroke="#535353" stroke-width="2" stroke-linecap="round"/>
+                                    <path d="M2 8.375C2 5.54657 2 4.13236 2.87868 3.25368C3.75736 2.375 5.17157 2.375 8 2.375H10.4029C10.8605 2.375 11.0893 2.375 11.2899 2.46832C11.4905 2.56164 11.6379 2.73667 11.9327 3.08673L13.5298 4.98333C13.7625 5.25959 13.8788 5.39772 13.9394 5.56379C14 5.72985 14 5.91044 14 6.2716V10.625C14 13.4534 14 14.8676 13.1213 15.7463C12.2426 16.625 10.8284 16.625 8 16.625V16.625C5.17157 16.625 3.75736 16.625 2.87868 15.7463C2 14.8676 2 13.4534 2 10.625V8.375Z" stroke="#535353" stroke-width="2"/>
+                                  </svg>
+                                  آرشیو ها  
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contacts">
+                    <div class="users">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <img src="img/user.png" >
+                            </div>
+                            <div class="col-md-7">
+                                <h3>چت با پشتیبانی</h3>
+                                <p>متن تست پشتیبانی متن تست پشتیبانی متن تست پشتیبانی متن تست پشتیبانی</p>
+                            </div>
+                            <div class="col-md-2">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="users">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <img src="img/user.png" >
+                            </div>
+                            <div class="col-md-7">
+                                <h3>چت با پشتیبانی</h3>
+                                <p>متن تست پشتیبانی متن تست پشتیبانی متن تست پشتیبانی متن تست پشتیبانی</p>
+                            </div>
+                            <div class="col-md-2">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 content">
+                <div class="chat-head">
+                    <div class="right">
+                        <img src="img/user.png" >
+                        <h3>چت با پشتیبانی</h3>
+                    </div>
+                    <div class="left">
+                        <button class="support-button">اتمام پشتیبانی</button>
+                        <a href="#" class="menu">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="58" height="50" viewBox="0 0 58 50" fill="none">
+                                <path d="M21.75 18.75H36.25" stroke="#A7A7A7" stroke-width="3" stroke-linecap="round"/>
+                                <path d="M21.75 27.0833H36.25" stroke="#A7A7A7" stroke-width="3" stroke-linecap="round"/>
+                                <path d="M21.75 35.4167H31.4167" stroke="#A7A7A7" stroke-width="3" stroke-linecap="round"/>
+                              </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <!--javascript-->
+    <script src="js/script.js"></script>
+</body>
+
+</html>

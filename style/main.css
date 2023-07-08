@@ -1,0 +1,167 @@
+@font-face {
+  font-family: "iranyekan";
+  src: url("../font/Qs_Iranyekanmedium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "iranyekanvbold";
+  src: url("../font/Qs_Iranyekanbold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Iranyekanextrabold";
+  src: url("../font/Qs_Iranyekanextrabold.ttf") format("truetype");
+}
+main {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+body {
+  background-color: #fff;
+}
+
+a {
+  text-decoration: none;
+}
+
+.sidebar {
+  background-color: #FBFBFB;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  border-left: 2px solid #C5C5C5;
+}
+.sidebar .search-side {
+  display: inline-flex;
+}
+.sidebar .search-side form {
+  padding: 3px;
+  margin-bottom: 13px;
+  margin-top: 22px;
+  margin-right: 20px;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid #C5C5C5;
+}
+.sidebar .search-side form input {
+  border: none;
+  padding: 4px;
+  background-color: white;
+  font-family: "iranyekan";
+  font-size: 14px;
+  width: 246px;
+}
+.sidebar .search-side form button {
+  background: black;
+  padding: 5px;
+  border-radius: 10px;
+  border: none;
+}
+.sidebar .search-side .look {
+  background: #3617F8;
+  padding: 5px;
+  border-radius: 10px;
+  border: none;
+  height: 100%;
+  margin-right: 10px;
+  margin-top: 27px;
+  transition: 0.5s;
+}
+.sidebar .search-side .look :hover {
+  background: #1f0c96;
+  transition: 0.5s;
+}
+.sidebar .archives {
+  background-color: #E3F6FB;
+  padding: 10px;
+  padding-right: 20px;
+}
+.sidebar .archives a {
+  color: #535353;
+  font-family: "iranyekan";
+  font-weight: 800;
+  font-size: 13px;
+}
+.sidebar .archives a:hover {
+  color: #3617F8;
+  padding-bottom: 9px;
+  border-bottom: 2px solid #3617F8;
+}
+.sidebar .contacts .users {
+  display: inline-flex;
+  margin-top: 15px;
+  background-color: #FBFBFB;
+  border-bottom: 2px solid #C5C5C5;
+}
+.sidebar .contacts .users img {
+  margin-right: 15px;
+}
+.sidebar .contacts .users h3 {
+  font-size: 16px;
+  font-family: "Iranyekanextrabold";
+}
+.sidebar .contacts .users p {
+  color: #535353;
+  font-family: "iranyekan";
+  font-weight: 400;
+  font-size: 12px;
+}
+.sidebar .contacts .users .users :hover {
+  background-color: #E3F6FB;
+}
+
+.content {
+  padding-right: 0px !important;
+}
+.content .chat-head {
+  background-color: #FBFBFB;
+  display: inline-flex;
+  padding: 3px;
+  margin-bottom: 7px;
+  width: 100%;
+  height: 100%;
+  border-bottom: 2px solid #C5C5C5;
+  height: 81px;
+}
+.content .chat-head .right {
+  width: 65%;
+  display: inline-flex;
+  float: right;
+  justify-content: right;
+}
+.content .chat-head .left {
+  width: 35%;
+  display: inline-flex;
+  float: left;
+  justify-content: left;
+}
+.content .chat-head img {
+  border-radius: 50px;
+  width: 60px;
+  height: 60px;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+.content .chat-head h3 {
+  margin-top: 25px;
+  margin-right: 20px;
+  font-size: 23px;
+  font-family: "Iranyekanextrabold";
+}
+.content .chat-head .support-button {
+  background: #C83232;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.19);
+  height: 50px;
+  margin-top: 15px;
+  width: 130px;
+  color: white;
+  font-family: "iranyekan";
+  border-radius: 10px;
+  border: none;
+  margin-left: 20px;
+}
+.content .chat-head .menu {
+  margin-top: 15px;
+  margin-left: 20px;
+}
+
+/*# sourceMappingURL=main.css.map */
