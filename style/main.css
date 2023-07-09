@@ -254,6 +254,23 @@ a {
   font-size: 10px;
   margin: 2px;
 }
+.content .chat .message-left .reply {
+  background: #414141;
+  color: white;
+  font-family: "iranyekan";
+  font-weight: 400;
+  margin-left: 10px;
+  border-radius: 15px 15px 0px 0px;
+  padding: 7px;
+  position: relative;
+  font-size: 12px;
+  top: 10px;
+  color: rgba(255, 255, 255, 0.3882352941);
+}
+.content .chat .message-left .rep-button {
+  margin-left: 5px;
+  margin-top: 12px;
+}
 .content .chat .message-right {
   display: inline-flex;
   margin-right: 10px;
@@ -279,6 +296,23 @@ a {
 .content .chat .message-right img {
   width: 46px;
   margin-bottom: 14px;
+}
+.content .chat .message-right .reply {
+  background-color: #3D3570;
+  color: white;
+  font-family: "iranyekan";
+  font-weight: 400;
+  margin-right: 10px;
+  border-radius: 15px 15px 0px 0px;
+  padding: 7px;
+  position: relative;
+  font-size: 12px;
+  top: 10px;
+  color: rgba(255, 255, 255, 0.6392156863);
+}
+.content .chat .message-right .rep-button {
+  margin-right: 5px;
+  margin-top: 12px;
 }
 .content .chat .nothing {
   border-radius: 36px;

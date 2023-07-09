@@ -257,6 +257,23 @@ a{
                     margin:2px;
                 }
             }
+            .reply{
+                background: #414141;
+                color: white;
+                font-family: $mainfont;
+                font-weight: 400;
+                margin-left: 10px;
+                border-radius: 15px 15px 0px 0px;
+                padding: 7px;
+                position: relative;
+                font-size: 12px;
+                top: 10px;
+                color: #FFFFFF63;
+            }
+            .rep-button{
+                margin-left: 5px;
+                margin-top: 12px;
+            }
         }
         .message-right{
             display: inline-flex;
@@ -282,6 +299,23 @@ a{
             img{
                 width: 46px;
                 margin-bottom: 14px;
+            }
+            .reply{
+                background-color: #3D3570;
+                color: white;
+                font-family: "iranyekan";
+                font-weight: 400;
+                margin-right: 10px;
+                border-radius: 15px 15px 0px 0px;
+                padding: 7px;
+                position: relative;
+                font-size: 12px;
+                top: 10px;
+                color: #FFFFFFA3;
+            }
+            .rep-button{
+                margin-right: 5px;
+                margin-top: 12px;
             }
         }
         .nothing{
