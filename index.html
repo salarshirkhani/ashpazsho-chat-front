@@ -16,7 +16,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>  
     <main class="container">
         <div class="row">
-            <div class="col-md-4 sidebar">
+            <div class="col-md-4 col-12 sidebar">
                 <div class="search-side">
                     <form class="search-form" accept="" method="POST">
                         <input type="text" name="q" id="q" placeholder="جست و جو در چت ها ...">
@@ -68,17 +68,43 @@
                         </div>
                     </div>
                 </div>
+                <div class="archives-mobile">
+                    <div class="mobile-row">
+                            <a href="#" class="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="19" viewBox="0 0 21 19" fill="none">
+                                    <path d="M10.5 3.95834C5.98193 3.95834 3.36828 6.97367 2.30784 8.55584C2.04115 8.95375 1.9078 9.15271 1.92078 9.47847C1.93377 9.80423 2.088 9.99885 2.39647 10.3881C3.63731 11.9539 6.58111 15.0417 10.5 15.0417C14.4189 15.0417 17.3627 11.9539 18.6035 10.3881C18.912 9.99885 19.0662 9.80423 19.0792 9.47847C19.0922 9.15271 18.9589 8.95375 18.6922 8.55584C17.6317 6.97367 15.0181 3.95834 10.5 3.95834Z" stroke="#535353" stroke-width="2"/>
+                                    <ellipse cx="10.5" cy="9.50001" rx="3.5" ry="3.16667" fill="#535353"/>
+                                  </svg>
+                                تازه ترین ها
+                            </a>
+                            <a href="#" class="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+                                    <path d="M2.375 6.375C2.375 4.48938 2.375 3.54657 2.96079 2.96079C3.54657 2.375 4.48938 2.375 6.375 2.375H12.625C14.5106 2.375 15.4534 2.375 16.0392 2.96079C16.625 3.54657 16.625 4.48938 16.625 6.375V12.625C16.625 14.5106 16.625 15.4534 16.0392 16.0392C15.4534 16.625 14.5106 16.625 12.625 16.625H6.375C4.48938 16.625 3.54657 16.625 2.96079 16.0392C2.375 15.4534 2.375 14.5106 2.375 12.625V6.375Z" stroke="#535353" stroke-width="2"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M14.25 7.91666H10.3652C9.54769 7.91666 9.13894 7.91666 8.77139 7.76442C8.40385 7.61217 8.11482 7.32314 7.53676 6.74508L7.50491 6.71323C6.92685 6.13517 6.63782 5.84614 6.27027 5.6939C5.90273 5.54166 5.49398 5.54166 4.67648 5.54166H2.375V12.625C2.375 14.5106 2.375 15.4534 2.96079 16.0392C3.54657 16.625 4.48938 16.625 6.375 16.625H12.625C14.5106 16.625 15.4534 16.625 16.0392 16.0392C16.625 15.4534 16.625 14.5106 16.625 12.625V5.54166C16.625 5.89001 16.625 6.06419 16.6034 6.21012C16.4741 7.08153 15.7899 7.76575 14.9185 7.89501C14.7725 7.91666 14.5984 7.91666 14.25 7.91666ZM5.54167 11.6667C4.98938 11.6667 4.54167 12.1144 4.54167 12.6667C4.54167 13.2189 4.98938 13.6667 5.54167 13.6667H11.875C12.4273 13.6667 12.875 13.2189 12.875 12.6667C12.875 12.1144 12.4273 11.6667 11.875 11.6667H5.54167Z" fill="#535353"/>
+                                  </svg>
+                                  پایان یافته
+                            </a>
+                            <a href="#" class="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="19" viewBox="0 0 16 19" fill="none">
+                                    <path d="M10.6666 16.625V14.875C10.6666 13.9431 10.6666 13.4772 10.5144 13.1096C10.3114 12.6196 9.92205 12.2302 9.43199 12.0272C9.06445 11.875 8.59851 11.875 7.66663 11.875V11.875C6.73474 11.875 6.2688 11.875 5.90126 12.0272C5.4112 12.2302 5.02185 12.6196 4.81887 13.1096C4.66663 13.4772 4.66663 13.9431 4.66663 14.875V16.625" stroke="#535353" stroke-width="2"/>
+                                    <path d="M4.66663 6.33334H7.99996" stroke="#535353" stroke-width="2" stroke-linecap="round"/>
+                                    <path d="M2 8.375C2 5.54657 2 4.13236 2.87868 3.25368C3.75736 2.375 5.17157 2.375 8 2.375H10.4029C10.8605 2.375 11.0893 2.375 11.2899 2.46832C11.4905 2.56164 11.6379 2.73667 11.9327 3.08673L13.5298 4.98333C13.7625 5.25959 13.8788 5.39772 13.9394 5.56379C14 5.72985 14 5.91044 14 6.2716V10.625C14 13.4534 14 14.8676 13.1213 15.7463C12.2426 16.625 10.8284 16.625 8 16.625V16.625C5.17157 16.625 3.75736 16.625 2.87868 15.7463C2 14.8676 2 13.4534 2 10.625V8.375Z" stroke="#535353" stroke-width="2"/>
+                                  </svg>
+                                  آرشیو ها  
+                            </a>
+                    </div>
+                </div>
                 <div class="contacts">
                     <div class="users">
                         <div class="row">
-                            <div class="col-md-3">
+                            <div class="col-3">
                                 <img src="img/user.png" >
                             </div>
-                            <div class="col-md-7">
+                            <div class="col-7">
                                 <h3>چت با پشتیبانی</h3>
                                 <p>متن تست پشتیبانی متن تست پشتیبانی متن تست پشتیبانی متن تست پشتیبانی</p>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-2">
                                 <p class="date">14 تیر</p>
                                 <p class="number">+56</p>
                             </div>
@@ -86,14 +112,14 @@
                     </div>
                     <div class="users">
                         <div class="row">
-                            <div class="col-md-3">
+                            <div class="col-3">
                                 <img src="img/user.png" >
                             </div>
-                            <div class="col-md-7">
+                            <div class="col-7">
                                 <h3>چت با پشتیبانی</h3>
                                 <p>متن تست پشتیبانی متن تست پشتیبانی متن تست پشتیبانی متن تست پشتیبانی</p>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-2">
                                 <p class="date">14 تیر</p>
                                 <p class="number">+56</p>
                             </div>
@@ -101,14 +127,14 @@
                     </div>
                     <div class="users">
                         <div class="row">
-                            <div class="col-md-3">
+                            <div class="col-3">
                                 <img src="img/user.png" >
                             </div>
-                            <div class="col-md-7">
+                            <div class="col-7">
                                 <h3>چت با پشتیبانی</h3>
                                 <p>متن تست پشتیبانی متن تست پشتیبانی متن تست پشتیبانی متن تست پشتیبانی</p>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-2">
                                 <p class="date">14 تیر</p>
                                 <p class="number">+56</p>
                             </div>
@@ -116,14 +142,14 @@
                     </div>
                     <div class="users">
                         <div class="row">
-                            <div class="col-md-3">
+                            <div class="col-3">
                                 <img src="img/user.png" >
                             </div>
-                            <div class="col-md-7">
+                            <div class="col-7">
                                 <h3>چت با پشتیبانی</h3>
                                 <p>متن تست پشتیبانی متن تست پشتیبانی متن تست پشتیبانی متن تست پشتیبانی</p>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-2">
                                 <p class="date">14 تیر</p>
                                 <p class="number">+56</p>
                             </div>
@@ -131,14 +157,14 @@
                     </div>
                     <div class="users">
                         <div class="row">
-                            <div class="col-md-3">
+                            <div class="col-3">
                                 <img src="img/user.png" >
                             </div>
-                            <div class="col-md-7">
+                            <div class="col-7">
                                 <h3>چت با پشتیبانی</h3>
                                 <p>متن تست پشتیبانی متن تست پشتیبانی متن تست پشتیبانی متن تست پشتیبانی</p>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-2">
                                 <p class="date">14 تیر</p>
                                 <p class="number">+56</p>
                             </div>
@@ -146,14 +172,14 @@
                     </div>
                     <div class="users">
                         <div class="row">
-                            <div class="col-md-3">
+                            <div class="col-3">
                                 <img src="img/user.png" >
                             </div>
-                            <div class="col-md-7">
+                            <div class="col-7">
                                 <h3>چت با پشتیبانی</h3>
                                 <p>متن تست پشتیبانی متن تست پشتیبانی متن تست پشتیبانی متن تست پشتیبانی</p>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-2">
                                 <p class="date">14 تیر</p>
                                 <p class="number">+56</p>
                             </div>
@@ -161,14 +187,14 @@
                     </div>
                     <div class="users">
                         <div class="row">
-                            <div class="col-md-3">
+                            <div class="col-3">
                                 <img src="img/user.png" >
                             </div>
-                            <div class="col-md-7">
+                            <div class="col-7">
                                 <h3>چت با پشتیبانی</h3>
                                 <p>متن تست پشتیبانی متن تست پشتیبانی متن تست پشتیبانی متن تست پشتیبانی</p>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-2">
                                 <p class="date">14 تیر</p>
                                 <p class="number">+56</p>
                             </div>
@@ -184,7 +210,7 @@
                     </a>
                 </div>
             </div>
-            <div class="col-md-8 content">
+            <div class="col-md-8 col-12 content">
                 <div class="chat-head">
                     <div class="right">
                         <img src="img/user.png" >
@@ -384,6 +410,24 @@
                         <input type="text" name="message" placeholder="متن پیام خود را بنویسید ..." required >
                         <button type="submit">
                             ارسال پیام
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M9.93929 12.6465L7.69205 11.8974L7.69205 11.8974L7.69204 11.8974C5.33883 11.113 4.16223 10.7208 4.16223 10C4.16223 9.27924 5.33884 8.88704 7.69205 8.10264L16.2052 5.26491C17.861 4.71299 18.6889 4.43702 19.1259 4.87404C19.5629 5.31105 19.287 6.13895 18.735 7.79474L15.8973 16.3079L15.8973 16.3079L15.8973 16.3079C15.1129 18.6611 14.7207 19.8377 14 19.8377C13.2792 19.8377 12.887 18.6611 12.1026 16.3079L11.3535 14.0607L15.7071 9.70711C16.0976 9.31659 16.0976 8.68342 15.7071 8.2929C15.3165 7.90237 14.6834 7.90237 14.2928 8.2929L9.93929 12.6465Z" fill="white"/>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+                <div class="send-message-mobile">
+                    <form action="" method="post" >
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="51" height="51" viewBox="0 0 51 51" fill="none">
+                                <path d="M29.3009 31.008L27.0996 34.746C25.3424 37.7298 21.499 38.7242 18.5152 36.967V36.967C15.5313 35.2099 14.5369 31.3665 16.2941 28.3826L18.4954 24.6447" stroke="#A7A7A7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M28.5122 19.9915L22.3602 30.438" stroke="#A7A7A7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M32.3769 25.7848L34.5782 22.0468C36.3354 19.063 35.3409 15.2196 32.3571 13.4624V13.4624C29.3732 11.7052 25.5299 12.6996 23.7727 15.6835L21.5714 19.4214" stroke="#A7A7A7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                        <input type="text" name="message" placeholder="متن پیام خود را بنویسید ..." required >
+                        <button type="submit">
+                            
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M9.93929 12.6465L7.69205 11.8974L7.69205 11.8974L7.69204 11.8974C5.33883 11.113 4.16223 10.7208 4.16223 10C4.16223 9.27924 5.33884 8.88704 7.69205 8.10264L16.2052 5.26491C17.861 4.71299 18.6889 4.43702 19.1259 4.87404C19.5629 5.31105 19.287 6.13895 18.735 7.79474L15.8973 16.3079L15.8973 16.3079L15.8973 16.3079C15.1129 18.6611 14.7207 19.8377 14 19.8377C13.2792 19.8377 12.887 18.6611 12.1026 16.3079L11.3535 14.0607L15.7071 9.70711C16.0976 9.31659 16.0976 8.68342 15.7071 8.2929C15.3165 7.90237 14.6834 7.90237 14.2928 8.2929L9.93929 12.6465Z" fill="white"/>
                             </svg>

@@ -1,5 +1,20 @@
 @import 'fonts';
 @import 'utilities';
+/* SCROLLER DESIGN */
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }  
+  ::-webkit-scrollbar-thumb {
+    background: $maincolor;
+    border-radius: 20px;
+    transition: 0.5s;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @include mainhover;
+  }
 .sidebar{
     background-color: $headcolor; 
     padding-left: 0px !important;
@@ -44,6 +59,7 @@
             }
         }
     }
+    .archives-mobile{display: none;}
     .archives{
         background-color: $archivecolor;
         padding: 10px;
@@ -328,5 +344,16 @@
             }  
         }
     }
-
+    .send-message-mobile{
+        display: none;
+        form{
+            display: none;
+            input{
+                display: none;
+            }
+            button{
+                display: none;
+            }  
+        }
+    }
 }

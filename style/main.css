@@ -18,6 +18,9 @@ main {
 
 body {
   background-color: #fff;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 a {
@@ -89,6 +92,9 @@ a {
 .sidebar .search-side .look :hover {
   background: #1f0c96;
   transition: 0.5s;
+}
+.sidebar .archives-mobile {
+  display: none;
 }
 .sidebar .archives {
   background-color: #E3F6FB;
@@ -235,6 +241,7 @@ a {
 }
 .content .chat .message-left img {
   width: 46px;
+  height: 46px;
   margin-bottom: 14px;
 }
 .content .chat .message-left p {
@@ -295,6 +302,7 @@ a {
 }
 .content .chat .message-right img {
   width: 46px;
+  height: 46px;
   margin-bottom: 14px;
 }
 .content .chat .message-right .reply {
@@ -372,6 +380,18 @@ a {
   font-weight: 400;
   float: left;
   font-size: 15px;
+}
+.content .send-message-mobile {
+  display: none;
+}
+.content .send-message-mobile form {
+  display: none;
+}
+.content .send-message-mobile form input {
+  display: none;
+}
+.content .send-message-mobile form button {
+  display: none;
 }
 
 /*# sourceMappingURL=main.css.map */
