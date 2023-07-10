@@ -1,57 +1,5 @@
-@font-face {
-    font-family: 'iranyekan';
-    src:url('../font/Qs_Iranyekanmedium.ttf') format('truetype');
-        
-}
-@font-face {
-    font-family: 'iranyekanvbold';
-    src:url('../font/Qs_Iranyekanbold.ttf') format('truetype');    
-}
-@font-face {
-    font-family: 'Iranyekanextrabold';
-    src:url('../font/Qs_Iranyekanextrabold.ttf') format('truetype');    
-}
-$headcolor:#FBFBFB;
-$bordercolor:#C5C5C5;
-$mainfont:'iranyekan';
-$titlefont:'Iranyekanextrabold';
-$maincolor:#3617F8;
-$archivecolor:#E3F6FB;
-$mainhovercolor:#1f0c96;
-$secondcolor:#C83232;
-@mixin center{
-    display: block;
-    margin-right: auto;
-    margin-left:auto;
-}
-@mixin mainhover{
-    background: $mainhovercolor;
-    transition: 0.5s;
-}
-main{
-    @include center;
-}
-body{
-    background-color: #fff;
-}
-a{
-    text-decoration: none;
-}
-/* SCROLLER DESIGN */
-::-webkit-scrollbar {
-    width: 5px;
-  }
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1; 
-  }  
-  ::-webkit-scrollbar-thumb {
-    background: $maincolor;
-    border-radius: 20px;
-    transition: 0.5s;
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    @include mainhover;
-  }
+@import 'fonts';
+@import 'utilities';
 .sidebar{
     background-color: $headcolor; 
     padding-left: 0px !important;
@@ -238,6 +186,7 @@ a{
             float: left;
             img{
                 width: 46px;
+                height: 46px;
                 margin-bottom: 14px;
             }
             p{
@@ -298,6 +247,7 @@ a{
             }
             img{
                 width: 46px;
+                height: 46px;
                 margin-bottom: 14px;
             }
             .reply{
