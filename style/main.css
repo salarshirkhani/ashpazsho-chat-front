@@ -37,13 +37,13 @@ a {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #3617F8;
+  background: #c20b0b;
   border-radius: 20px;
   transition: 0.5s;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #1f0c96;
+  background: #960c0c;
   transition: 0.5s;
 }
 
