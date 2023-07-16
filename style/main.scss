@@ -84,6 +84,7 @@
             display: inline-flex;
             padding-top: 15px;
             background-color: $headcolor;
+            width: 100%;
             border-bottom: 2px solid $bordercolor;
             img{
                 margin-right: 15px;
@@ -115,6 +116,7 @@
         }
         .users:hover{
             background-color: $archivecolor !important;
+            cursor:pointer;
         }
     }
     .last-row{

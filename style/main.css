@@ -37,13 +37,13 @@ a {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #c20b0b;
+  background: #3617F8;
   border-radius: 20px;
   transition: 0.5s;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #960c0c;
+  background: #1f0c96;
   transition: 0.5s;
 }
 
@@ -121,6 +121,7 @@ a {
   display: inline-flex;
   padding-top: 15px;
   background-color: #FBFBFB;
+  width: 100%;
   border-bottom: 2px solid #C5C5C5;
 }
 .sidebar .contacts .users img {
@@ -152,6 +153,7 @@ a {
 }
 .sidebar .contacts .users:hover {
   background-color: #E3F6FB !important;
+  cursor: pointer;
 }
 .sidebar .last-row {
   display: inline-flex;
