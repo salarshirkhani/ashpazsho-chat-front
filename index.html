@@ -8,11 +8,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.rtl.min.css" integrity="sha384-gXt9imSW0VcJVHezoNQsP+TNrjYXoGcrqBZJpry9zJt8PCQjobwmhMGaDHTASo9N" crossorigin="anonymous">
     <link rel="stylesheet" href="style/main.css" media="only screen and (min-width: 1000px)">
     <link rel="stylesheet" href="style/style-mobile.css" media="only screen and (max-width: 999px)">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="js/persian-date.js"></script>
 </head>
-<body>
+<body onload = "Index()">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>  
     <main class="container">
         <div class="row">
@@ -143,6 +142,52 @@
                 </div>
                 <div class="chat">
 
+                    <div class="temprow" hidden>
+                        <div class="nothing temp">
+                            <img src="img/nothing.png">
+                            <h3>هنوز پیامی فرستاده نشده</h3>
+                            <p>هرچی دل تنگت میخواد بنویس :)</p>
+                        </div>
+                    </div>
+
+                    <div class="temprow" hidden>
+                        <div class="form">
+                            <form action="" method="POST" class="">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <input name="subject" placeholder="موضوع تیکت" >
+                                    </div>
+                                    <div class="col-md-6">
+                                        <select name="type" placeholder="میزان اهمیت" >
+                                            <option value="" disabled selected hidden>میزان اهمیت</option>
+                                            <option value="normal">عادی</option>
+                                            <option value="danger">فوری</option>
+                                            <option value="critical">بحرانی</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <select name="departmant">
+                                            <option value="" disabled selected hidden>دپارتمان</option>
+                                            <option value="financial">مالی</option>
+                                            <option value="technical">فنی</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <textarea name="description" rows="6" placeholder="توضیحات"></textarea>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <button type="submit">
+                                            ایجاد تیکت 
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M9.93929 12.6465L7.69205 11.8974L7.69205 11.8974L7.69204 11.8974C5.33883 11.113 4.16223 10.7208 4.16223 10C4.16223 9.27924 5.33884 8.88704 7.69205 8.10264L16.2052 5.26491C17.861 4.71299 18.6889 4.43702 19.1259 4.87404C19.5629 5.31105 19.287 6.13895 18.735 7.79474L15.8973 16.3079L15.8973 16.3079L15.8973 16.3079C15.1129 18.6611 14.7207 19.8377 14 19.8377C13.2792 19.8377 12.887 18.6611 12.1026 16.3079L11.3535 14.0607L15.7071 9.70711C16.0976 9.31659 16.0976 8.68342 15.7071 8.2929C15.3165 7.90237 14.6834 7.90237 14.2928 8.2929L9.93929 12.6465Z" fill="white"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    
                     <div class="temprow" hidden>
                         <div class="message-right">
                             <img src="img/user.png" >
