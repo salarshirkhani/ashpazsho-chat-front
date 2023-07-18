@@ -353,7 +353,7 @@ a {
   background: #F8F8F8;
   justify-content: center;
   padding: 30px;
-  width: 100%;
+  width: 97%;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -421,6 +421,11 @@ a {
   font-weight: 400;
   font-size: 15px;
   width: 100%;
+}
+.content .chat .form form button:hover {
+  background: #1f0c96;
+  transition: 0.5s;
+  background: #E37F09;
 }
 .content .send-message {
   display: inline-flex;
