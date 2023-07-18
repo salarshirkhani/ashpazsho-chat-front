@@ -95,24 +95,6 @@
                 </div>
                 <div class="contacts">
 
-                    <div class="temprow" hidden>
-                        <div class="users" data-id="0" onclick="GetMessage(this)">
-                            <div class="row" style="width: 100%;">
-                                <div class="col-3">
-                                    <img src="img/user.png" >
-                                </div>
-                                <div class="col-7">
-                                    <h3></h3>
-                                    <p id="content"></p>
-                                </div>
-                                <div class="col-2">
-                                    <p class="date">14 تیر</p>
-                                    <p class="number">+56</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
                 <div class="last-row">
                     <a href="#" class="new-ticket-button">
@@ -141,100 +123,6 @@
                     </div>
                 </div>
                 <div class="chat">
-
-                    <div class="temprow" hidden>
-                        <div class="nothing temp">
-                            <img src="img/nothing.png">
-                            <h3>هنوز پیامی فرستاده نشده</h3>
-                            <p>هرچی دل تنگت میخواد بنویس :)</p>
-                        </div>
-                    </div>
-
-                    <div class="temprow" hidden>
-                        <div class="form">
-                            <form action="" method="POST" class="">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <input name="subject" placeholder="موضوع تیکت" >
-                                    </div>
-                                    <div class="col-md-6">
-                                        <select name="type" placeholder="میزان اهمیت" >
-                                            <option value="" disabled selected hidden>میزان اهمیت</option>
-                                            <option value="normal">عادی</option>
-                                            <option value="danger">فوری</option>
-                                            <option value="critical">بحرانی</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <select name="departmant">
-                                            <option value="" disabled selected hidden>دپارتمان</option>
-                                            <option value="financial">مالی</option>
-                                            <option value="technical">فنی</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <textarea name="description" rows="6" placeholder="توضیحات"></textarea>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <button type="submit">
-                                            ایجاد تیکت 
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M9.93929 12.6465L7.69205 11.8974L7.69205 11.8974L7.69204 11.8974C5.33883 11.113 4.16223 10.7208 4.16223 10C4.16223 9.27924 5.33884 8.88704 7.69205 8.10264L16.2052 5.26491C17.861 4.71299 18.6889 4.43702 19.1259 4.87404C19.5629 5.31105 19.287 6.13895 18.735 7.79474L15.8973 16.3079L15.8973 16.3079L15.8973 16.3079C15.1129 18.6611 14.7207 19.8377 14 19.8377C13.2792 19.8377 12.887 18.6611 12.1026 16.3079L11.3535 14.0607L15.7071 9.70711C16.0976 9.31659 16.0976 8.68342 15.7071 8.2929C15.3165 7.90237 14.6834 7.90237 14.2928 8.2929L9.93929 12.6465Z" fill="white"/>
-                                            </svg>
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    
-                    <div class="temprow" hidden>
-                        <div class="message-right">
-                            <img src="img/user.png" >
-                            <div class="contain">
-                                <div class="reply" >
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="22" viewBox="0 0 18 22" fill="none">
-                                        <path d="M3 9.16667L2.22604 9.7999L1.70794 9.16667L2.22604 8.53343L3 9.16667ZM16 16.5C16 17.0523 15.5523 17.5 15 17.5C14.4477 17.5 14 17.0523 14 16.5L16 16.5ZM5.97604 14.3832L2.22604 9.7999L3.77396 8.53343L7.52396 13.1168L5.97604 14.3832ZM2.22604 8.53343L5.97604 3.95009L7.52396 5.21657L3.77396 9.7999L2.22604 8.53343ZM3 8.16667L9 8.16667L9 10.1667L3 10.1667L3 8.16667ZM16 15.1667L16 16.5L14 16.5L14 15.1667L16 15.1667ZM9 8.16667C12.866 8.16666 16 11.3007 16 15.1667L14 15.1667C14 12.4052 11.7614 10.1667 9 10.1667L9 8.16667Z" fill="#A7A7A7"/>
-                                    </svg>
-                                    <span>
-                                        متن تست پشتیبانی متن تست پشتیبانی متن تست پشتیبانی متن تست پشتیبانی
-                                    </span>
-                                </div>
-                                <p class="main-content">متن تست پشتیبانی متن تست پشتیبانی متن تست پشتیبانی متن تست پشتیبانی
-                                    <span class="time">17:11</span>
-                                </p> 
-                            </div>
-                            <a href="#" class="rep-button">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="22" viewBox="0 0 18 22" fill="none">
-                                    <path d="M3 9.16667L2.22604 9.7999L1.70794 9.16667L2.22604 8.53343L3 9.16667ZM16 16.5C16 17.0523 15.5523 17.5 15 17.5C14.4477 17.5 14 17.0523 14 16.5L16 16.5ZM5.97604 14.3832L2.22604 9.7999L3.77396 8.53343L7.52396 13.1168L5.97604 14.3832ZM2.22604 8.53343L5.97604 3.95009L7.52396 5.21657L3.77396 9.7999L2.22604 8.53343ZM3 8.16667L9 8.16667L9 10.1667L3 10.1667L3 8.16667ZM16 15.1667L16 16.5L14 16.5L14 15.1667L16 15.1667ZM9 8.16667C12.866 8.16666 16 11.3007 16 15.1667L14 15.1667C14 12.4052 11.7614 10.1667 9 10.1667L9 8.16667Z" fill="#A7A7A7"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="temprow" hidden>
-                        <div class="message-left">
-                            <a href="#" class="rep-button">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
-                                    <path d="M16.6666 8.75L17.3908 9.43966L18.0476 8.75L17.3908 8.06034L16.6666 8.75ZM2.33329 15.75C2.33329 16.3023 2.78101 16.75 3.33329 16.75C3.88558 16.75 4.33329 16.3023 4.33329 15.75L2.33329 15.75ZM13.2241 13.8147L17.3908 9.43966L15.9425 8.06034L11.7758 12.4353L13.2241 13.8147ZM17.3908 8.06034L13.2241 3.68534L11.7758 5.06465L15.9425 9.43966L17.3908 8.06034ZM16.6666 7.75L9.33329 7.75L9.33329 9.75L16.6666 9.75L16.6666 7.75ZM2.33329 14.75L2.33329 15.75L4.33329 15.75L4.33329 14.75L2.33329 14.75ZM9.33329 7.75C5.4673 7.75 2.33329 10.884 2.33329 14.75L4.33329 14.75C4.33329 11.9886 6.57187 9.75 9.33329 9.75L9.33329 7.75Z" fill="#A7A7A7"/>
-                                </svg>
-                            </a>
-                            <div class="contain">
-                                <div class="reply">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="22" viewBox="0 0 18 22" fill="none">
-                                        <path d="M3 9.16667L2.22604 9.7999L1.70794 9.16667L2.22604 8.53343L3 9.16667ZM16 16.5C16 17.0523 15.5523 17.5 15 17.5C14.4477 17.5 14 17.0523 14 16.5L16 16.5ZM5.97604 14.3832L2.22604 9.7999L3.77396 8.53343L7.52396 13.1168L5.97604 14.3832ZM2.22604 8.53343L5.97604 3.95009L7.52396 5.21657L3.77396 9.7999L2.22604 8.53343ZM3 8.16667L9 8.16667L9 10.1667L3 10.1667L3 8.16667ZM16 15.1667L16 16.5L14 16.5L14 15.1667L16 15.1667ZM9 8.16667C12.866 8.16666 16 11.3007 16 15.1667L14 15.1667C14 12.4052 11.7614 10.1667 9 10.1667L9 8.16667Z" fill="#A7A7A7"/>
-                                    </svg>
-                                    <span>
-                                        متن تست پشتیبانی متن تست پشتیبانی متن تست پشتیبانی متن تست پشتیبانی
-                                    </span>
-                                </div>
-                                <p>متن تست پشتیبانی متن تست پشتیبانی متن تست پشتیبانی متن تست پشتیبانی
-                                    <span class="time">17:11</span>
-                                </p> 
-                            </div>
-                            <img src="img/user.png" >
-                        </div>
-                    </div>
 
                 </div>
                 <div class="send-message">
@@ -277,6 +165,120 @@
         </div>
     </main>
 
+    <div class="components">
+
+        <div class="temprow" hidden>
+            <div class="users" data-id="0" onclick="GetMessage(this)">
+                <div class="row" style="width: 100%;">
+                    <div class="col-3">
+                        <img src="img/user.png" >
+                    </div>
+                    <div class="col-7">
+                        <h3></h3>
+                        <p id="content"></p>
+                    </div>
+                    <div class="col-2">
+                        <p class="date">14 تیر</p>
+                        <p class="number">+56</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="temprow" hidden>
+            <div class="nothing temp">
+                <img src="img/nothing.png">
+                <h3>هنوز پیامی فرستاده نشده</h3>
+                <p>هرچی دل تنگت میخواد بنویس :)</p>
+            </div>
+        </div>
+
+        <div class="temprow" hidden>
+            <div class="form">
+                <form action="" method="POST" class="">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <input name="subject" placeholder="موضوع تیکت" >
+                        </div>
+                        <div class="col-md-6">
+                            <select name="type" placeholder="میزان اهمیت" >
+                                <option value="" disabled selected hidden>میزان اهمیت</option>
+                                <option value="normal">عادی</option>
+                                <option value="danger">فوری</option>
+                                <option value="critical">بحرانی</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <select name="departmant">
+                                <option value="" disabled selected hidden>دپارتمان</option>
+                                <option value="financial">مالی</option>
+                                <option value="technical">فنی</option>
+                            </select>
+                        </div>
+                        <div class="col-md-12">
+                            <textarea name="description" rows="6" placeholder="توضیحات"></textarea>
+                        </div>
+                        <div class="col-md-12">
+                            <button type="submit">
+                                ایجاد تیکت 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.93929 12.6465L7.69205 11.8974L7.69205 11.8974L7.69204 11.8974C5.33883 11.113 4.16223 10.7208 4.16223 10C4.16223 9.27924 5.33884 8.88704 7.69205 8.10264L16.2052 5.26491C17.861 4.71299 18.6889 4.43702 19.1259 4.87404C19.5629 5.31105 19.287 6.13895 18.735 7.79474L15.8973 16.3079L15.8973 16.3079L15.8973 16.3079C15.1129 18.6611 14.7207 19.8377 14 19.8377C13.2792 19.8377 12.887 18.6611 12.1026 16.3079L11.3535 14.0607L15.7071 9.70711C16.0976 9.31659 16.0976 8.68342 15.7071 8.2929C15.3165 7.90237 14.6834 7.90237 14.2928 8.2929L9.93929 12.6465Z" fill="white"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <div class="temprow" hidden>
+            <div class="message-right">
+                <img src="img/user.png" >
+                <div class="contain">
+                    <div class="reply" >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="22" viewBox="0 0 18 22" fill="none">
+                            <path d="M3 9.16667L2.22604 9.7999L1.70794 9.16667L2.22604 8.53343L3 9.16667ZM16 16.5C16 17.0523 15.5523 17.5 15 17.5C14.4477 17.5 14 17.0523 14 16.5L16 16.5ZM5.97604 14.3832L2.22604 9.7999L3.77396 8.53343L7.52396 13.1168L5.97604 14.3832ZM2.22604 8.53343L5.97604 3.95009L7.52396 5.21657L3.77396 9.7999L2.22604 8.53343ZM3 8.16667L9 8.16667L9 10.1667L3 10.1667L3 8.16667ZM16 15.1667L16 16.5L14 16.5L14 15.1667L16 15.1667ZM9 8.16667C12.866 8.16666 16 11.3007 16 15.1667L14 15.1667C14 12.4052 11.7614 10.1667 9 10.1667L9 8.16667Z" fill="#A7A7A7"/>
+                        </svg>
+                        <span>
+                            متن تست پشتیبانی متن تست پشتیبانی متن تست پشتیبانی متن تست پشتیبانی
+                        </span>
+                    </div>
+                    <p class="main-content">متن تست پشتیبانی متن تست پشتیبانی متن تست پشتیبانی متن تست پشتیبانی
+                        <span class="time">17:11</span>
+                    </p> 
+                </div>
+                <a href="#" class="rep-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="22" viewBox="0 0 18 22" fill="none">
+                        <path d="M3 9.16667L2.22604 9.7999L1.70794 9.16667L2.22604 8.53343L3 9.16667ZM16 16.5C16 17.0523 15.5523 17.5 15 17.5C14.4477 17.5 14 17.0523 14 16.5L16 16.5ZM5.97604 14.3832L2.22604 9.7999L3.77396 8.53343L7.52396 13.1168L5.97604 14.3832ZM2.22604 8.53343L5.97604 3.95009L7.52396 5.21657L3.77396 9.7999L2.22604 8.53343ZM3 8.16667L9 8.16667L9 10.1667L3 10.1667L3 8.16667ZM16 15.1667L16 16.5L14 16.5L14 15.1667L16 15.1667ZM9 8.16667C12.866 8.16666 16 11.3007 16 15.1667L14 15.1667C14 12.4052 11.7614 10.1667 9 10.1667L9 8.16667Z" fill="#A7A7A7"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <div class="temprow" hidden>
+            <div class="message-left">
+                <a href="#" class="rep-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                        <path d="M16.6666 8.75L17.3908 9.43966L18.0476 8.75L17.3908 8.06034L16.6666 8.75ZM2.33329 15.75C2.33329 16.3023 2.78101 16.75 3.33329 16.75C3.88558 16.75 4.33329 16.3023 4.33329 15.75L2.33329 15.75ZM13.2241 13.8147L17.3908 9.43966L15.9425 8.06034L11.7758 12.4353L13.2241 13.8147ZM17.3908 8.06034L13.2241 3.68534L11.7758 5.06465L15.9425 9.43966L17.3908 8.06034ZM16.6666 7.75L9.33329 7.75L9.33329 9.75L16.6666 9.75L16.6666 7.75ZM2.33329 14.75L2.33329 15.75L4.33329 15.75L4.33329 14.75L2.33329 14.75ZM9.33329 7.75C5.4673 7.75 2.33329 10.884 2.33329 14.75L4.33329 14.75C4.33329 11.9886 6.57187 9.75 9.33329 9.75L9.33329 7.75Z" fill="#A7A7A7"/>
+                    </svg>
+                </a>
+                <div class="contain">
+                    <div class="reply">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="22" viewBox="0 0 18 22" fill="none">
+                            <path d="M3 9.16667L2.22604 9.7999L1.70794 9.16667L2.22604 8.53343L3 9.16667ZM16 16.5C16 17.0523 15.5523 17.5 15 17.5C14.4477 17.5 14 17.0523 14 16.5L16 16.5ZM5.97604 14.3832L2.22604 9.7999L3.77396 8.53343L7.52396 13.1168L5.97604 14.3832ZM2.22604 8.53343L5.97604 3.95009L7.52396 5.21657L3.77396 9.7999L2.22604 8.53343ZM3 8.16667L9 8.16667L9 10.1667L3 10.1667L3 8.16667ZM16 15.1667L16 16.5L14 16.5L14 15.1667L16 15.1667ZM9 8.16667C12.866 8.16666 16 11.3007 16 15.1667L14 15.1667C14 12.4052 11.7614 10.1667 9 10.1667L9 8.16667Z" fill="#A7A7A7"/>
+                        </svg>
+                        <span>
+                            متن تست پشتیبانی متن تست پشتیبانی متن تست پشتیبانی متن تست پشتیبانی
+                        </span>
+                    </div>
+                    <p>متن تست پشتیبانی متن تست پشتیبانی متن تست پشتیبانی متن تست پشتیبانی
+                        <span class="time">17:11</span>
+                    </p> 
+                </div>
+                <img src="img/user.png" >
+            </div>
+        </div>
+    </div>
 
     <!--javascript-->
     <script src="js/script.js"></script>
