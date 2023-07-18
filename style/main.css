@@ -348,6 +348,80 @@ a {
   margin-top: 15px;
   font-size: 12px;
 }
+.content .chat .form {
+  border-radius: 36px;
+  background: #F8F8F8;
+  justify-content: center;
+  padding: 30px;
+  width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+}
+.content .chat .form h3 {
+  font-size: 16px;
+  font-family: "Iranyekanextrabold";
+  margin-top: 15px;
+}
+.content .chat .form p {
+  color: #535353;
+  font-family: "iranyekan";
+  font-weight: 400;
+  margin-top: 15px;
+  font-size: 12px;
+}
+.content .chat .form form {
+  color: #535353;
+  font-family: "iranyekan";
+  font-weight: 400;
+  margin-top: 15px;
+  font-size: 15px;
+}
+.content .chat .form form input {
+  padding: 10px;
+  flex-shrink: 0;
+  width: 100%;
+  border: 1px solid #979797;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+.content .chat .form form textarea {
+  padding: 10px;
+  flex-shrink: 0;
+  width: 100%;
+  border: 1px solid #979797;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+.content .chat .form form select {
+  padding: 10px;
+  color: #535353;
+  flex-shrink: 0;
+  margin-top: 15px;
+  width: 100%;
+  border: 1px solid #979797;
+  border-radius: 10px;
+}
+.content .chat .form form option {
+  padding: 10px;
+  flex-shrink: 0;
+  width: 100%;
+  border: 1px solid #979797;
+  border-radius: 10px;
+}
+.content .chat .form form button {
+  background: #3617F8;
+  padding: 11px;
+  margin: 15px 0px;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  font-family: "iranyekan";
+  font-weight: 400;
+  font-size: 15px;
+  width: 100%;
+}
 .content .send-message {
   display: inline-flex;
   width: 100%;

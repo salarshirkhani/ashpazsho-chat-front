@@ -310,6 +310,80 @@
                 font-size: 12px;
             }
         }
+        .form{
+            border-radius: 36px;
+            background: #F8F8F8;
+            justify-content: center;
+            padding: 30px;
+            width: 100%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 100px;
+            h3{
+                font-size: 16px;
+                font-family: $titlefont;
+                margin-top: 15px;
+            }
+            p{
+                color: #535353;
+                font-family: $mainfont;
+                font-weight: 400;
+                margin-top: 15px;
+                font-size: 12px;
+            }
+            form{
+                color: #535353;
+                font-family: $mainfont;
+                font-weight: 400;
+                margin-top: 15px;
+                font-size: 15px;
+                input{
+                    padding: 10px;
+                    flex-shrink: 0;
+                    width: 100%;
+                    border: 1px solid #979797;
+                    border-radius: 10px;
+                    margin-top: 15px;
+                }
+                textarea{
+                    padding: 10px;
+                    flex-shrink: 0;
+                    width: 100%;
+                    border: 1px solid #979797;
+                    border-radius: 10px;
+                    margin-top: 15px;
+                }
+                select{
+                    padding: 10px;
+                    color: #535353;
+                    flex-shrink: 0;
+                    margin-top: 15px;
+                    width: 100%;
+                    border: 1px solid #979797;
+                    border-radius: 10px;
+                }
+                option{
+                    padding: 10px;
+                    flex-shrink: 0;
+                    width: 100%;
+                    border: 1px solid #979797;
+                    border-radius: 10px;
+                }
+                button{
+                    background: #3617F8;
+                    padding: 11px;
+                    margin: 15px 0px;
+                    color: white;
+                    border-radius: 10px;
+                    border: none;
+                    font-family: $mainfont;
+                    font-weight: 400;
+                    font-size: 15px;
+                    width: 100%;
+                }
+            }
+        }
     }
     .send-message{
         display: inline-flex;
