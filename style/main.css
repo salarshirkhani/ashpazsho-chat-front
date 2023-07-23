@@ -163,6 +163,7 @@ a {
 }
 .sidebar .last-row .new-ticket-button {
   background: #E37F09;
+  cursor: pointer;
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.19);
   margin-top: 5px;
   color: white;
@@ -240,6 +241,7 @@ a {
   display: inline-flex;
   margin-left: 10px;
   float: left;
+  width: 100%;
 }
 .content .chat .message-left img {
   width: 46px;
@@ -284,6 +286,7 @@ a {
   display: inline-flex;
   margin-right: 10px;
   float: right;
+  width: 100%;
 }
 .content .chat .message-right p {
   background-color: #5142A8;
@@ -371,14 +374,14 @@ a {
   margin-top: 15px;
   font-size: 12px;
 }
-.content .chat .form form {
+.content .chat .form .start-ticket {
   color: #535353;
   font-family: "iranyekan";
   font-weight: 400;
   margin-top: 15px;
   font-size: 15px;
 }
-.content .chat .form form input {
+.content .chat .form .start-ticket input {
   padding: 10px;
   flex-shrink: 0;
   width: 100%;
@@ -386,7 +389,7 @@ a {
   border-radius: 10px;
   margin-top: 15px;
 }
-.content .chat .form form textarea {
+.content .chat .form .start-ticket textarea {
   padding: 10px;
   flex-shrink: 0;
   width: 100%;
@@ -394,7 +397,7 @@ a {
   border-radius: 10px;
   margin-top: 15px;
 }
-.content .chat .form form select {
+.content .chat .form .start-ticket select {
   padding: 10px;
   color: #535353;
   flex-shrink: 0;
@@ -403,14 +406,14 @@ a {
   border: 1px solid #979797;
   border-radius: 10px;
 }
-.content .chat .form form option {
+.content .chat .form .start-ticket option {
   padding: 10px;
   flex-shrink: 0;
   width: 100%;
   border: 1px solid #979797;
   border-radius: 10px;
 }
-.content .chat .form form button {
+.content .chat .form .start-ticket button {
   background: #3617F8;
   padding: 11px;
   margin: 15px 0px;
@@ -422,7 +425,7 @@ a {
   font-size: 15px;
   width: 100%;
 }
-.content .chat .form form button:hover {
+.content .chat .form .start-ticket button:hover {
   background: #1f0c96;
   transition: 0.5s;
   background: #E37F09;
@@ -431,7 +434,7 @@ a {
   display: inline-flex;
   width: 100%;
 }
-.content .send-message form {
+.content .send-message .sender {
   padding: 3px;
   margin-bottom: 13px;
   margin-top: 22px;
@@ -441,7 +444,7 @@ a {
   border-radius: 10px;
   border: 1px solid #C5C5C5;
 }
-.content .send-message form input {
+.content .send-message .sender input {
   border: none;
   padding: 4px;
   background: #F3F3F3;
@@ -450,7 +453,7 @@ a {
   margin-top: 20px;
   width: 600px;
 }
-.content .send-message form button {
+.content .send-message .sender button {
   background: #3617F8;
   padding: 11px;
   margin: 10px;

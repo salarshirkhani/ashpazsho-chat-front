@@ -154,12 +154,6 @@
 
 		post: function (serviceUrl, Jsonparameter, funcResult, token, baseURL, funcError) {
 
-			if (Jsonparameter.setion == undefined || Jsonparameter.setion == null || Jsonparameter.setion == '') {
-
-				Jsonparameter.setion = kh_main.cookie.getCookie('usersetion');
-
-            }
-
 
 			kh_main.Loding.show();
 
