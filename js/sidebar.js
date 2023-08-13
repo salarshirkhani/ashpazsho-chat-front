@@ -1,9 +1,12 @@
-var token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyOSIsImp0aSI6ImQyNjUyOTJjLWVjODItNDI0Yy1iMGE3LTYwNmVkNmFjYjQ5NiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiMDkxMjc5NzYxOTAiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOlsicHVibGljIiwiYWRtaW5UaWNrZXQiXSwiZXhwIjoxNjkwMzgyNTEyLCJpc3MiOiJNS0giLCJhdWQiOiJNS0gifQ.4YeG8XfSiQnVZX1P6rPtdoccFhHTvybFxAfj8EeQge8';
-
-function utilities(){
-    
+var token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyOSIsImp0aSI6ImYyNmU4ZDViLTI4ZmQtNDQ2YS05MmFmLWI0NGNlYjA0NjM5MyIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiMDkxMjc5NzYxOTAiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOlsicHVibGljIiwiYWRtaW5UaWNrZXQiXSwiZXhwIjoxNjkxOTM3Njc0LCJpc3MiOiJNS0giLCJhdWQiOiJNS0gifQ.iESG4bWXn3NoUWf4IZPYkUJpC6Q8McPmi1kbcVLhrJ4\\';
+function utilities(title){
+    var row = $('.chat-head .right h3').css('display','block');
+    $(row).html(title);
 }
 function  Index(){
+    $('.chat-head .right h3').css('display','none');
+    $('.chat-head .right img').css('display','none');
+    $('.chat-head .left button').css('display','none');
     var link = 'userTicket/Tickets?status=all';
     $('.send-message').css('display','none');
     var row = $('.components .temprow .nothing').clone();
@@ -20,9 +23,10 @@ function  Index(){
     
                 var row = $('.components .temprow .users').clone();
                 $(row).attr('data-id',item.id)
+                $(row).attr('data-name',item.subject)
                 $('h3' , row).html(item.subject);
                 $('#content' , row).html(item.description);
-                $('.date' , row).html('14t');
+                $('.date' , row).html(item.pcreatedate);
                 $('.contacts').append(row);
             }
         }
@@ -36,7 +40,7 @@ function  Index(){
 
 function  GetChats(status){
     var link = 'userTicket/Tickets?status='+status ;
-    kh_main.service.get(link, function (response) {
+    kh_main.service.get(link, function (response) {vhbjbnjbhnmk
 
         kh_main.Loding.hide();
         if (response.messageType == 1) {
@@ -46,9 +50,10 @@ function  GetChats(status){
     
                 var row = $('.components .temprow .users').clone();
                 $(row).attr('data-id',item.id)
+                $(row).attr('data-name',item.subject)
                 $('h3' , row).html(item.subject);
                 $('#content' , row).html(item.description);
-                $('.date' , row).html('14t');
+                $('.date' , row).html(item.pcreatedate);
                 $('.contacts').append(row);
             }
         }
@@ -62,6 +67,8 @@ function  GetChats(status){
 
 function  GetMessage(tag){
     var id = $(tag).attr('data-id');
+    var title = $(tag).attr('data-name');
+    utilities(title)
     $('.selected-chat').removeClass('selected-chat');
     $(tag).addClass('selected-chat');
     $('.chat .nothing:not(.temp)').remove();

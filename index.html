@@ -107,12 +107,14 @@
             </div>
             <div class="col-md-8 col-12 content">
                 <div class="chat-head">
+
                     <div class="right">
                         <img src="img/user.png" >
                         <h3>چت با پشتیبانی</h3>
                     </div>
+
                     <div class="left">
-                        <button class="support-button">اتمام پشتیبانی</button>
+                        <button class="support-button" onclick="EndSupport()">اتمام پشتیبانی</button>
                         <a href="#" class="menu">
                             <svg xmlns="http://www.w3.org/2000/svg" width="58" height="50" viewBox="0 0 58 50" fill="none">
                                 <path d="M21.75 18.75H36.25" stroke="#A7A7A7" stroke-width="3" stroke-linecap="round"/>
@@ -121,6 +123,7 @@
                               </svg>
                         </a>
                     </div>
+                    
                 </div>
                 <div class="chat">
 
@@ -168,7 +171,7 @@
     <div class="components">
 
         <div class="temprow" hidden>
-            <div class="users" data-id="0" onclick="GetMessage(this)">
+            <div class="users" data-id="0" data-name="0" onclick="GetMessage(this)">
                 <div class="row" style="width: 100%;">
                     <div class="col-3">
                         <img src="img/user.png" >
