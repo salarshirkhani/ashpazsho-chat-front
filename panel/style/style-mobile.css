@@ -407,3 +407,65 @@
     .disflex-3-3 {
         display: block;
     }
+    .table {
+        background: rgb(255 255 255) !important;
+        color: #2c2b2b;
+        width: 100%;
+        max-width: 1300px;
+        border-radius: 7px;
+        padding: 40px;
+        overflow-x: auto;
+        font-family: iranyekanvbold;
+    }
+    .table thead {
+        vertical-align: bottom;
+        background: #6374ff !important;
+        color: white;
+        border-radius: 7px !important;
+    }
+    .table tfoot {
+        vertical-align: bottom;
+        background: #6374ff !important; 
+        color: white;
+        border-radius: 7px !important;
+    }
+    
+    table {
+        border-collapse: collapse;
+        margin: 50px 0px;
+    }
+    .table-hover tbody tr:hover {
+        background-color: rgba(0,0,0,.075);
+    }
+    
+    .table-striped tbody tr:nth-of-type(odd) {
+        background-color: rgba(0,0,0,.05);
+    }
+    .table-bordered thead td, .table-bordered thead th {
+    }
+    .table thead th {
+        vertical-align: bottom;
+        border-bottom: 2px solid #dee2e6;
+    }
+    .table-bordered td, .table-bordered th {
+    }
+    .table td, .table th {
+        padding: 0.75rem;
+        vertical-align: top;
+        text-align: center;
+    }
+    .add-button {
+        background: #69c397;
+        padding: 10px;
+        border: none;
+        border-radius: 3px;
+        color: white;
+        margin-top: 50px;
+    }
+                
+    .add-button:hover{
+        background: #07b107;
+    }
+    .table tr td {
+        color: #2c2b2b;
+    }

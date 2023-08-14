@@ -1,4 +1,4 @@
-var token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyOSIsImp0aSI6ImYyNmU4ZDViLTI4ZmQtNDQ2YS05MmFmLWI0NGNlYjA0NjM5MyIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiMDkxMjc5NzYxOTAiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOlsicHVibGljIiwiYWRtaW5UaWNrZXQiXSwiZXhwIjoxNjkxOTM3Njc0LCJpc3MiOiJNS0giLCJhdWQiOiJNS0gifQ.iESG4bWXn3NoUWf4IZPYkUJpC6Q8McPmi1kbcVLhrJ4\\';
+var token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyOSIsImp0aSI6IjM1OTUzYzExLTExMDEtNGY1OS05MDg1LWY2ZmM4MGUwYzBmYyIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiMDkxMjc5NzYxOTAiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOlsicHVibGljIiwiYWRtaW5UaWNrZXQiXSwiZXhwIjoxNjkyMDExNDE3LCJpc3MiOiJNS0giLCJhdWQiOiJNS0gifQ.cABhjB_brSorlY6SEUz9aUxDsfI9R8iZOaO0VHCDAow';
 function utilities(title){
     var row = $('.chat-head .right h3').css('display','block');
     $(row).html(title);
@@ -184,7 +184,7 @@ function GetStartChat(){
     $('.chat .nothing:not(.temp)').remove();
     $('.chat .message-right').remove();
     $('.send-message').css('display','none');
-    
+    utilities('ایجاد تیکت جدید')
     var row = $('.components .temprow .form').clone();
     $('.chat').append(row);    
 }
@@ -195,6 +195,7 @@ function SendMessage(){
     $('#departmant').val() != undefined || $('#departmant').val() != '' ){
         //SEND DATA 
         var link = 'userTicket/Sendsupport';
+        
         var json= {'subject':$('#subject').val() , 'department':$('#departmant').val() , 'type':$('#type').val() , 'description':$('#description').val() }
         kh_main.service.post(link,json, function (response) {
             if (response.messageType == 1) {   
