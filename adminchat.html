@@ -4,175 +4,177 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>چت با کاربر </title>
+    <title>داشبورد باهم</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.rtl.min.css" integrity="sha384-gXt9imSW0VcJVHezoNQsP+TNrjYXoGcrqBZJpry9zJt8PCQjobwmhMGaDHTASo9N" crossorigin="anonymous">
     <link rel="stylesheet" href="panel/style/style.css" media="only screen and (min-width: 1200px)">
     <link rel="stylesheet" href="panel/style/style-mobile.css" media="only screen and (max-width: 576px)">
-    <link rel="stylesheet" href="style/main.css" media="only screen and (min-width: 1000px)">
-    <link rel="stylesheet" href="style/style-mobile.css" media="only screen and (max-width: 999px)">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="panel/sticky-kit-master/dist/sticky-kit.min.js"></script> 
 </head>
-<style>
-  body {
-    background-color: #f5f5f5;
-  }
-  .content {
-    /* padding-right: 0px !important; */
-    margin-right: -11px;
-    border-radius: 10px;
-}
-.content .chat-head {
-    border-radius:10px;
-}
-</style>
-<body style="overflow-y: scroll;" onload = "loadchat()">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-        <main class="container">
-            <div class="ma-dsh  row">
-                <button class="menu-btn">&#9776;</button>
-
-                <!-- main page site -->
-                <section class="main-bar col-xl-12 col-12" style="padding: 0% 4%;">
-                    <!-- dashbord site ba-hm -->
-                    <div class="section-dsh row main-bar disflex col-xl-12 col-12" >
-                        <div class="col-xl-8 col-5" >
-                            <h1>چت با کاربر</h1>
-                        </div>
-                        <div class="row col-xl-4 col-7 disflex">
-    
-    
-                        </div>
+<body style="overflow-y: scroll;" onload = "Index()">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <main class="container">
+        <div class="ma-dsh  row">
+            <button class="menu-btn">&#9776;</button>
+            <!--
+            <aside class="menu said-bar col-xl-3 col-12">
+                <div id = "side" class="cold">
+                    <h3 style="text-align: center;
+                    font-size: 27px;
+                    font-weight: 700;
+                    padding-bottom: 20px;
+                    padding-top: 30px; font-family: 'iranyekan';">پنل سیمو</h3>
+                    <div class="list">
+                        <ul class="list-out ">
+                            <li> <a href=""> <img src="panel/img/Box.svg" alt="Box">داشبورد</a></li>
+                            <li> <a href=""> <img src="panel/img/Arhive_fill.svg" alt="Arhive_fill">صندوق های سرمایه گذاری</a></li>
+                            <li> <a href=""> <img src="panel/img/Arhive_fill.svg" alt="Arhive_fill">صندوق سرمایه گذاری باهم</a></li>
+                            <li> <a href=""> <img src="panel/img/Shop.svg" alt="Arhive_fill">کمپین 3 درصدی ها</a></li>
+                            <li> <a href=""> <img src="panel/img/Wallet_alt_fill.svg" alt="Arhive_fill">اطلاعات حساب بانکی</a></li>  
+                        </ul>
                     </div>
-
-                    <div class="col-md-12 col-12 content">
-                        <div class="chat-head">
-        
-                            <div class="right">
-                                <img src="img/user.png" >
-                                <h3>چت با پشتیبانی</h3>
-                            </div>
-        
-                            <div class="left">
-                                <button class="support-button" onclick="EndSupport()">اتمام پشتیبانی</button>
-                                <a href="#" class="menu">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="58" height="50" viewBox="0 0 58 50" fill="none">
-                                        <path d="M21.75 18.75H36.25" stroke="#A7A7A7" stroke-width="3" stroke-linecap="round"/>
-                                        <path d="M21.75 27.0833H36.25" stroke="#A7A7A7" stroke-width="3" stroke-linecap="round"/>
-                                        <path d="M21.75 35.4167H31.4167" stroke="#A7A7A7" stroke-width="3" stroke-linecap="round"/>
-                                      </svg>
-                                </a>
-                            </div>
-                            
-                        </div>
-                        <div class="chat">
-        
-                        </div>
-                        <div class="send-message">
-                            <div class="sender">
-                                <a href="#">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="51" height="51" viewBox="0 0 51 51" fill="none">
-                                        <path d="M29.3009 31.008L27.0996 34.746C25.3424 37.7298 21.499 38.7242 18.5152 36.967V36.967C15.5313 35.2099 14.5369 31.3665 16.2941 28.3826L18.4954 24.6447" stroke="#A7A7A7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M28.5122 19.9915L22.3602 30.438" stroke="#A7A7A7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M32.3769 25.7848L34.5782 22.0468C36.3354 19.063 35.3409 15.2196 32.3571 13.4624V13.4624C29.3732 11.7052 25.5299 12.6996 23.7727 15.6835L21.5714 19.4214" stroke="#A7A7A7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </a>
-                                <input type="text" id="message" name="message" placeholder="متن پیام خود را بنویسید ..." required >
-                                <button onclick="SendMessage()">
-                                    ارسال پیام
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.93929 12.6465L7.69205 11.8974L7.69205 11.8974L7.69204 11.8974C5.33883 11.113 4.16223 10.7208 4.16223 10C4.16223 9.27924 5.33884 8.88704 7.69205 8.10264L16.2052 5.26491C17.861 4.71299 18.6889 4.43702 19.1259 4.87404C19.5629 5.31105 19.287 6.13895 18.735 7.79474L15.8973 16.3079L15.8973 16.3079L15.8973 16.3079C15.1129 18.6611 14.7207 19.8377 14 19.8377C13.2792 19.8377 12.887 18.6611 12.1026 16.3079L11.3535 14.0607L15.7071 9.70711C16.0976 9.31659 16.0976 8.68342 15.7071 8.2929C15.3165 7.90237 14.6834 7.90237 14.2928 8.2929L9.93929 12.6465Z" fill="white"/>
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="send-message-mobile">
-                            <div>
-                                <a href="#">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="51" height="51" viewBox="0 0 51 51" fill="none">
-                                        <path d="M29.3009 31.008L27.0996 34.746C25.3424 37.7298 21.499 38.7242 18.5152 36.967V36.967C15.5313 35.2099 14.5369 31.3665 16.2941 28.3826L18.4954 24.6447" stroke="#A7A7A7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M28.5122 19.9915L22.3602 30.438" stroke="#A7A7A7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M32.3769 25.7848L34.5782 22.0468C36.3354 19.063 35.3409 15.2196 32.3571 13.4624V13.4624C29.3732 11.7052 25.5299 12.6996 23.7727 15.6835L21.5714 19.4214" stroke="#A7A7A7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </a>
-                                <input type="text"  name="message" placeholder="متن پیام خود را بنویسید ..." required>
-                                <button onclick="SendMessage()">
-                                    
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.93929 12.6465L7.69205 11.8974L7.69205 11.8974L7.69204 11.8974C5.33883 11.113 4.16223 10.7208 4.16223 10C4.16223 9.27924 5.33884 8.88704 7.69205 8.10264L16.2052 5.26491C17.861 4.71299 18.6889 4.43702 19.1259 4.87404C19.5629 5.31105 19.287 6.13895 18.735 7.79474L15.8973 16.3079L15.8973 16.3079L15.8973 16.3079C15.1129 18.6611 14.7207 19.8377 14 19.8377C13.2792 19.8377 12.887 18.6611 12.1026 16.3079L11.3535 14.0607L15.7071 9.70711C16.0976 9.31659 16.0976 8.68342 15.7071 8.2929C15.3165 7.90237 14.6834 7.90237 14.2928 8.2929L9.93929 12.6465Z" fill="white"/>
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
+                    <div class="hr"></div>
+                    <div class="list-down">
+                        <ul class="list-out ">
+                            <li> <a href=""> <img src="panel/img/Arhive_fill.svg" alt="Arhive_fill">پشتیبانی</a></li>
+                            <li> <a href=""> <img src="panel/img/close_ring.svg" alt="close_ring">خروج از حساب</a></li>
+                        </ul>
                     </div>
-
-                </section> 
-            </div>
-        </main>
-        <div class="components">
-            
-            <div class="temprow" hidden>
-                <div class="nothing temp">
-                    <img src="img/nothing.png">
-                    <h3>هنوز پیامی فرستاده نشده</h3>
-                    <p>هرچی دل تنگت میخواد بنویس :)</p>
                 </div>
-            </div>
-    
-            
-            <div class="temprow" hidden>
-                <div class="message-right">
-                    <img src="img/user.png" >
-                    <div class="contain">
-                        <div class="reply" >
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="22" viewBox="0 0 18 22" fill="none">
-                                <path d="M3 9.16667L2.22604 9.7999L1.70794 9.16667L2.22604 8.53343L3 9.16667ZM16 16.5C16 17.0523 15.5523 17.5 15 17.5C14.4477 17.5 14 17.0523 14 16.5L16 16.5ZM5.97604 14.3832L2.22604 9.7999L3.77396 8.53343L7.52396 13.1168L5.97604 14.3832ZM2.22604 8.53343L5.97604 3.95009L7.52396 5.21657L3.77396 9.7999L2.22604 8.53343ZM3 8.16667L9 8.16667L9 10.1667L3 10.1667L3 8.16667ZM16 15.1667L16 16.5L14 16.5L14 15.1667L16 15.1667ZM9 8.16667C12.866 8.16666 16 11.3007 16 15.1667L14 15.1667C14 12.4052 11.7614 10.1667 9 10.1667L9 8.16667Z" fill="#A7A7A7"/>
-                            </svg>
-                            <span>
-                                متن تست پشتیبانی متن تست پشتیبانی متن تست پشتیبانی متن تست پشتیبانی
-                            </span>
-                        </div>
-                        <p class="main-content">متن تست پشتیبانی متن تست پشتیبانی متن تست پشتیبانی متن تست پشتیبانی
-                            <span class="time">17:11</span>
-                        </p> 
+                <div style="height: 400px;"></div>
+            </aside>
+            -->
+            <!-- main page site -->
+            <section class="main-bar col-xl-12 col-12" style="padding: 0% 4%;">
+                <!-- dashbord site ba-hm -->
+                <div class="section-dsh row main-bar disflex col-xl-12 col-12" >
+                    <div class="col-xl-8 col-5" >
+                        <h1>داشبورد</h1>
                     </div>
-                    <a href="#" class="rep-button">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="22" viewBox="0 0 18 22" fill="none">
-                            <path d="M3 9.16667L2.22604 9.7999L1.70794 9.16667L2.22604 8.53343L3 9.16667ZM16 16.5C16 17.0523 15.5523 17.5 15 17.5C14.4477 17.5 14 17.0523 14 16.5L16 16.5ZM5.97604 14.3832L2.22604 9.7999L3.77396 8.53343L7.52396 13.1168L5.97604 14.3832ZM2.22604 8.53343L5.97604 3.95009L7.52396 5.21657L3.77396 9.7999L2.22604 8.53343ZM3 8.16667L9 8.16667L9 10.1667L3 10.1667L3 8.16667ZM16 15.1667L16 16.5L14 16.5L14 15.1667L16 15.1667ZM9 8.16667C12.866 8.16666 16 11.3007 16 15.1667L14 15.1667C14 12.4052 11.7614 10.1667 9 10.1667L9 8.16667Z" fill="#A7A7A7"/>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-    
-            <div class="temprow" hidden>
-                <div class="message-left">
-                    <a href="#" class="rep-button">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
-                            <path d="M16.6666 8.75L17.3908 9.43966L18.0476 8.75L17.3908 8.06034L16.6666 8.75ZM2.33329 15.75C2.33329 16.3023 2.78101 16.75 3.33329 16.75C3.88558 16.75 4.33329 16.3023 4.33329 15.75L2.33329 15.75ZM13.2241 13.8147L17.3908 9.43966L15.9425 8.06034L11.7758 12.4353L13.2241 13.8147ZM17.3908 8.06034L13.2241 3.68534L11.7758 5.06465L15.9425 9.43966L17.3908 8.06034ZM16.6666 7.75L9.33329 7.75L9.33329 9.75L16.6666 9.75L16.6666 7.75ZM2.33329 14.75L2.33329 15.75L4.33329 15.75L4.33329 14.75L2.33329 14.75ZM9.33329 7.75C5.4673 7.75 2.33329 10.884 2.33329 14.75L4.33329 14.75C4.33329 11.9886 6.57187 9.75 9.33329 9.75L9.33329 7.75Z" fill="#A7A7A7"/>
-                        </svg>
-                    </a>
-                    <div class="contain">
-                        <div class="reply">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="22" viewBox="0 0 18 22" fill="none">
-                                <path d="M3 9.16667L2.22604 9.7999L1.70794 9.16667L2.22604 8.53343L3 9.16667ZM16 16.5C16 17.0523 15.5523 17.5 15 17.5C14.4477 17.5 14 17.0523 14 16.5L16 16.5ZM5.97604 14.3832L2.22604 9.7999L3.77396 8.53343L7.52396 13.1168L5.97604 14.3832ZM2.22604 8.53343L5.97604 3.95009L7.52396 5.21657L3.77396 9.7999L2.22604 8.53343ZM3 8.16667L9 8.16667L9 10.1667L3 10.1667L3 8.16667ZM16 15.1667L16 16.5L14 16.5L14 15.1667L16 15.1667ZM9 8.16667C12.866 8.16666 16 11.3007 16 15.1667L14 15.1667C14 12.4052 11.7614 10.1667 9 10.1667L9 8.16667Z" fill="#A7A7A7"/>
-                            </svg>
-                            <span>
-                                متن تست پشتیبانی متن تست پشتیبانی متن تست پشتیبانی متن تست پشتیبانی
-                            </span>
-                        </div>
-                        <p>متن تست پشتیبانی متن تست پشتیبانی متن تست پشتیبانی متن تست پشتیبانی
-                            <span class="time">17:11</span>
-                        </p> 
+                    <div class="row col-xl-4 col-7 disflex">
+
+
                     </div>
-                    <img src="img/user.png" >
                 </div>
+                <!-- General information of users -->
+                <div class="section-dsh-2 row main-bar col-xl-12 col-12">
+                    <!-- first table -->
+                    <div class="section-dsh-2-3tab col-xl-4 col-12" >
+                        <div class="section-dsh-2-0tab row" >
+                            <div class="col-xl-7 col-7">
+                                <span>پیام های دریافتی</span>  
+                                <br>
+                                <span>21 عدد</span>
+                            </div>    
+                            <div class="col-xl-5 col-5">
+                                <img src="https://app.bhmwallet.com/panel/img/Box.svg" width="95px" alt="Box">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- tow table -->
+                    <div class="section-dsh-2-3tab col-xl-4 col-12" >
+                        <div class="section-dsh-2-1tab row" >
+                            <div class="col-xl-7 col-7">
+                                <span>در انتظار پاسخ</span>
+                                <br>
+                                <span>17 عدد</span>
+                            </div>    
+                            <div class="col-xl-5 col-5">
+                                <img src="https://app.bhmwallet.com/panel/img/Folder_dublicate.svg" width="95px"  style="margin-right:1px" alt="Arhive_fill">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- three table -->
+                    <div class="section-dsh-2-3tab col-xl-4 col-12" >
+                        <div class="section-dsh-2-2tab row" >
+                            <div class="col-xl-7 col-7" >
+                                <span>مدت عضویت </span>
+                                <span> 178روز </span>
+                            </div>    
+                            <div class="col-xl-5 col-5">
+                                <img src="https://app.bhmwallet.com/panel/img/close_ring.svg" width="95px" alt="close_ring">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h4 style="margin-top:105px; font-weight:900; font-family: iranyekanvbold;">آخرین تیکت ها</h4>
+                <p style="font-family: iranyekan;">آخرین تیکت هارا در اینجا مشاهده کنید </p>
+                    <div class="grayBlueBg">                    
+                            <table class="table table-hover table table-striped table-condensed " style='color: white; overflow-x:auto; margin-right: auto; margin-left: auto;'>
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>موضوع</th>
+                                        <th>دپارتمان</th>
+                                        <th>وضعیت</th>
+                                        <th>نمایش</th>    
+                                        <th>بستن</th>
+                                    </tr>
+                                        </thead>
+                                            <tbody id="data">  
+                                            </tbody>
+                                            <tfoot>
+                                            <tr style="border-top:2px solid white;">
+                                                <th>#</th>
+                                                <th>موضوع</th>
+                                                <th>دپارتمان</th>
+                                                <th>وضعیت</th>
+                                                <th>نمایش</th>    
+                                                <th>بستن</th>
+                                            </tr>
+                                            </tfoot>
+                                    </table>
+                    
+                    </div>
+            </section> 
+        </div>
+    </main>
+<!--
+    <footer class="container-fluid footer-dsh">
+        <div class="row col-xl-12 col-12 disflex">
+            <div class="col-xl-4 col-7"> 
+                <span> سیمو اپ</span>
+            </div>
+            <div class="col-xl-6 col-1">
+
+            </div>
+            <div class="col-xl-1 col-4">
+                <img src="panel/img/logo.png" style="width: 100%;" alt="simo" >        
             </div>
         </div>
-        <!--javascript-->
-        <script src="panel/js/script.js"></script>
-        <script src="js/kh_main.js"></script>
-        <script src="js/panel.js"></script>
-    </body>
-    
-    </html>
-    
+    </footer>
+-->
+    <div class="components">
+
+        <div class="temprow" hidden>
+            <table>
+                <tr data-id="0" data-name="0" >
+                    <td class="a"></td>
+                    <td class="b"></td>
+                    <td class="c"></td>
+                    <td class="e"></td>
+                    <td><a style="background: rgb(0, 195, 255);padding: 6px;border-radius: 3px;color: white;"  onclick="call(this)" class="btn btn-success">نمایش تیکت</a></td>
+
+                    <td>
+                        <form action="{{route('dashboard.customer.closechat')}}" style="text-align:center;display:block ; margin-right:auto ; margin-left:auto;" method="post">
+                            <div class="input-group">
+                                <input type="hidden" name="support_id" value="{{$item->id}}">
+                                <span  style="text-align:center;display:block ; margin-right:auto ; margin-left:auto;">
+                                <button type="submit" style="background: red;padding: 7px;border-radius: 4px;color: white; text-align:center; border:none !important; cursor:pointer" >پایان پشتیبانی</button>
+                                </span>
+                            </div>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+           
+        </div>
+
+    </div>
+    <!--javascript-->
+    <script src="panel/js/script.js"></script>
+    <script src="js/kh_main.js"></script>
+    <script src="js/panel.js"></script>
+</body>
+
+</html>
