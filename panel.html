@@ -153,6 +153,186 @@
                     <td class="b"></td>
                     <td class="c"></td>
                     <td class="e"></td>
+                    <td><a style="background: rgb(0, 195, 255);padding: 6px;border-radius: 3px;color: white;" href="{{route('dashboard.customer.chat',['id'=>$item->id])}}" class="btn btn-success">نمایش تیکت</a></td>
+
+                    <td>
+                        <form action="{{route('dashboard.customer.closechat')}}" style="text-align:center;display:block ; margin-right:auto ; margin-left:auto;" method="post">
+                            <div class="input-group">
+                                <input type="hidden" name="support_id" value="{{$item->id}}">
+                                <span  style="text-align:center;display:block ; margin-right:auto ; margin-left:auto;">
+                                <button type="submit" style="background: red;padding: 7px;border-radius: 4px;color: white; text-align:center; border:none !important; cursor:pointer" >پایان پشتیبانی</button>
+                                </span>
+                            </div>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+           
+        </div>
+
+    </div>
+    <!--javascript-->
+    <script src="panel/js/script.js"></script>
+    <script src="js/kh_main.js"></script>
+    <script src="js/panel.js"></script>
+</body>
+
+</html>
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>  
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>داشبورد باهم</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.rtl.min.css" integrity="sha384-gXt9imSW0VcJVHezoNQsP+TNrjYXoGcrqBZJpry9zJt8PCQjobwmhMGaDHTASo9N" crossorigin="anonymous">
+    <link rel="stylesheet" href="panel/style/style.css" media="only screen and (min-width: 1200px)">
+    <link rel="stylesheet" href="panel/style/style-mobile.css" media="only screen and (max-width: 576px)">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="panel/sticky-kit-master/dist/sticky-kit.min.js"></script> 
+</head>
+<body style="overflow-y: scroll;" onload = "Index()">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <main class="container">
+        <div class="ma-dsh  row">
+            <button class="menu-btn">&#9776;</button>
+            <!--
+            <aside class="menu said-bar col-xl-3 col-12">
+                <div id = "side" class="cold">
+                    <h3 style="text-align: center;
+                    font-size: 27px;
+                    font-weight: 700;
+                    padding-bottom: 20px;
+                    padding-top: 30px; font-family: 'iranyekan';">پنل سیمو</h3>
+                    <div class="list">
+                        <ul class="list-out ">
+                            <li> <a href=""> <img src="panel/img/Box.svg" alt="Box">داشبورد</a></li>
+                            <li> <a href=""> <img src="panel/img/Arhive_fill.svg" alt="Arhive_fill">صندوق های سرمایه گذاری</a></li>
+                            <li> <a href=""> <img src="panel/img/Arhive_fill.svg" alt="Arhive_fill">صندوق سرمایه گذاری باهم</a></li>
+                            <li> <a href=""> <img src="panel/img/Shop.svg" alt="Arhive_fill">کمپین 3 درصدی ها</a></li>
+                            <li> <a href=""> <img src="panel/img/Wallet_alt_fill.svg" alt="Arhive_fill">اطلاعات حساب بانکی</a></li>  
+                        </ul>
+                    </div>
+                    <div class="hr"></div>
+                    <div class="list-down">
+                        <ul class="list-out ">
+                            <li> <a href=""> <img src="panel/img/Arhive_fill.svg" alt="Arhive_fill">پشتیبانی</a></li>
+                            <li> <a href=""> <img src="panel/img/close_ring.svg" alt="close_ring">خروج از حساب</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="height: 400px;"></div>
+            </aside>
+            -->
+            <!-- main page site -->
+            <section class="main-bar col-xl-12 col-12" style="padding: 0% 4%;">
+                <!-- dashbord site ba-hm -->
+                <div class="section-dsh row main-bar disflex col-xl-12 col-12" >
+                    <div class="col-xl-8 col-5" >
+                        <h1>داشبورد</h1>
+                    </div>
+                    <div class="row col-xl-4 col-7 disflex">
+
+
+                    </div>
+                </div>
+                <!-- General information of users -->
+                <div class="section-dsh-2 row main-bar col-xl-12 col-12">
+                    <!-- first table -->
+                    <div class="section-dsh-2-3tab col-xl-4 col-12" >
+                        <div class="section-dsh-2-0tab row" >
+                            <div class="col-xl-7 col-7">
+                                <span>پیام های دریافتی</span>  
+                                <br>
+                                <span>21 عدد</span>
+                            </div>    
+                            <div class="col-xl-5 col-5">
+                                <img src="https://app.bhmwallet.com/panel/img/Box.svg" width="95px" alt="Box">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- tow table -->
+                    <div class="section-dsh-2-3tab col-xl-4 col-12" >
+                        <div class="section-dsh-2-1tab row" >
+                            <div class="col-xl-7 col-7">
+                                <span>در انتظار پاسخ</span>
+                                <br>
+                                <span>17 عدد</span>
+                            </div>    
+                            <div class="col-xl-5 col-5">
+                                <img src="https://app.bhmwallet.com/panel/img/Folder_dublicate.svg" width="95px"  style="margin-right:1px" alt="Arhive_fill">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- three table -->
+                    <div class="section-dsh-2-3tab col-xl-4 col-12" >
+                        <div class="section-dsh-2-2tab row" >
+                            <div class="col-xl-7 col-7" >
+                                <span>مدت عضویت </span>
+                                <span> 178روز </span>
+                            </div>    
+                            <div class="col-xl-5 col-5">
+                                <img src="https://app.bhmwallet.com/panel/img/close_ring.svg" width="95px" alt="close_ring">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h4 style="margin-top:105px; font-weight:900; font-family: iranyekanvbold;">آخرین تیکت ها</h4>
+                <p style="font-family: iranyekan;">آخرین تیکت هارا در اینجا مشاهده کنید </p>
+                    <div class="grayBlueBg">                    
+                            <table class="table table-hover table table-striped table-condensed " style='color: white; overflow-x:auto; margin-right: auto; margin-left: auto;'>
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>موضوع</th>
+                                        <th>دپارتمان</th>
+                                        <th>وضعیت</th>
+                                        <th>نمایش</th>    
+                                        <th>بستن</th>
+                                    </tr>
+                                        </thead>
+                                            <tbody id="data">  
+                                            </tbody>
+                                            <tfoot>
+                                            <tr style="border-top:2px solid white;">
+                                                <th>#</th>
+                                                <th>موضوع</th>
+                                                <th>دپارتمان</th>
+                                                <th>وضعیت</th>
+                                                <th>نمایش</th>    
+                                                <th>بستن</th>
+                                            </tr>
+                                            </tfoot>
+                                    </table>
+                    
+                    </div>
+            </section> 
+        </div>
+    </main>
+<!--
+    <footer class="container-fluid footer-dsh">
+        <div class="row col-xl-12 col-12 disflex">
+            <div class="col-xl-4 col-7"> 
+                <span> سیمو اپ</span>
+            </div>
+            <div class="col-xl-6 col-1">
+
+            </div>
+            <div class="col-xl-1 col-4">
+                <img src="panel/img/logo.png" style="width: 100%;" alt="simo" >        
+            </div>
+        </div>
+    </footer>
+-->
+    <div class="components">
+
+        <div class="temprow" hidden>
+            <table>
+                <tr data-id="0" data-name="0" >
+                    <td class="a"></td>
+                    <td class="b"></td>
+                    <td class="c"></td>
+                    <td class="e"></td>
                     <td><a style="background: rgb(0, 195, 255);padding: 6px;border-radius: 3px;color: white;"  onclick="call(this)" class="btn btn-success">نمایش تیکت</a></td>
 
                     <td>
