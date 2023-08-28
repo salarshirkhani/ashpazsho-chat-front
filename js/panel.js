@@ -1,4 +1,3 @@
-var token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyOSIsImp0aSI6IjJmZjU2OThjLWFmNzMtNGVkNy05MGEzLWI5ZjZjOGQ2MTI0YSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiMDkxMjc5NzYxOTAiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOlsicHVibGljIiwiYWRtaW5UaWNrZXQiXSwiZXhwIjoxNjkyNDU1NTU3LCJpc3MiOiJNS0giLCJhdWQiOiJNS0gifQ.S_P9jbKjjIpMjZxZwWoOPrdtoFIyjpb1DZNn1KhN2Es';
 
 function utilities(title){
     var row = $('.chat-head .right h3').css('display','block');
@@ -19,6 +18,10 @@ function  Index(){
                 $(row).attr('data-id',item.id)
                 $(row).attr('data-name',item.subject)
                 $('td a' ,row).attr('data-id',item.id)
+                if(item.status=='closed'){
+                    $('td button' ,row).remove();
+                }
+                $('td button' ,row).attr('data-id',item.id)
                 $('td a' ,row).attr('data-name',item.subject)
                 $('.a' , row).html(item.id);
                 $('.b' , row).html(item.subject);
@@ -51,6 +54,7 @@ function getlink(kname){
 function  call(tag){
     var id = $(tag).attr('data-id');
     var title = $(tag).attr('data-name');
+    setCookie('htitle',title)
 
     window.location.href = 'adminchat.html?chatinfo='+id+'&title='+title;
 
@@ -59,13 +63,14 @@ function  call(tag){
 function  loadchat(){
 
     var id = getlink('chatinfo');
-    var title = getlink('title');
+    var title = getCookie('htitle');
     utilities(title)
     $('.selected-chat').removeClass('selected-chat');
     $('.chat .nothing:not(.temp)').remove();
     $('.chat .message-right').remove();
     $('.chat .form').remove();
     $('.send-message').css('display','inline-flex');
+    $('.left .support-button').attr('data-id',id)
     var link = 'userTicket/Chats?chatinfo='+id ;
         kh_main.service.get(link, function (response) {
         kh_main.Loding.hide();
@@ -168,4 +173,16 @@ function SendMessage(){
     else{
         alert('مقدار نا معنبر');
     }
+    } 
+
+    function endsupport(tag){
+        debugger
+        var id = $(tag).attr('data-id');
+        var link = 'userTicket/Close?id='+id;
+        kh_main.service.post(link, function (response) {
+            kh_main.Loding.hide();
+            if (response.messageType == 1) {  
+                alert('done');
+            }
+        },token);
     } 
