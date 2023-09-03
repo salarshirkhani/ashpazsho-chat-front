@@ -1,4 +1,3 @@
-var token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyOSIsImp0aSI6ImViMmU3ODcwLWFiNDktNDY0NC1hY2Q1LTY0M2RkNGNjNWY5NCIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiMDkxMjc5NzYxOTAiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOlsicHVibGljIiwiYWRtaW5UaWNrZXQiXSwiZXhwIjoxNjkzMjI5MDc3LCJpc3MiOiJNS0giLCJhdWQiOiJNS0gifQ.VEvN3yEPQchyiGyF80rxQ-PFPLctATS4IesiTsVk6-U';
 function utilities(title){
     var row = $('.chat-head .right h3').css('display','block');
     $(row).html(title);
@@ -129,14 +128,17 @@ function  GetMessage(tag){
 }
 
 function SendMessage(){
-
+    debugger
     if($('#message').val() != undefined || $('#message').val() != ''){
     //SEND DATA 
+
     var link = 'userTicket/Message';
     var json= {'supportId':$('.selected-chat').attr('data-id') , 'content':$('#message').val()}
-    kh_main.service.post(link,json, function (response) {
+    kh_main.service.post(link,json, function (response) { 
         if (response.messageType == 1) {   
+            kh_main.Loding.hide();
             $('#message').val(undefined);
+            $('.chat .nothing:not(.temp)').remove();
             const item = response.objectResult;
             if (item.senderId == '29') {
                 var row2 = $('.components .temprow .message-right').clone();
@@ -177,7 +179,7 @@ function SendMessage(){
     else{
         alert('مقدار نا معنبر');
     }
-    } 
+    }
 
 function GetStartChat(){
     $('.selected-chat').removeClass('selected-chat');
@@ -189,46 +191,33 @@ function GetStartChat(){
     $('.chat').append(row);    
 }
 
-function SendMessage(){
+function SendTicket(){
     if($('#subject').val() != undefined || $('#subject').val() != '' && 
     $('#description').val() != undefined || $('#description').val() != '' && 
     $('#departmant').val() != undefined || $('#departmant').val() != '' ){
+        var subject=$('#subject').val();
+        var description=$('#description').val();
         //SEND DATA 
         var link = 'userTicket/Sendsupport';
-        
-        var json= {'subject':$('#subject').val() , 'department':$('#departmant').val() , 'type':$('#type').val() , 'description':$('#description').val() }
+        debugger
+        var json= {'subject':$('#subject').val() , 'department':$('#departmant').val() , 'type':$('#type').val() , 'description':$('#description').val(), 'userId':'19'  }
         kh_main.service.post(link,json, function (response) {
-            if (response.messageType == 1) {   
-                var link = 'userTicket/Tickets?status=all';
+            if (response.messageType == 1) { 
+                kh_main.Loding.hide();
+                const item = response.objectResult;
                 $('.send-message').css('display','none');
                 $('.chat .form').remove();
                 var row = $('.components .temprow .nothing').clone();
-                $(row).removeClass('temp');
-                $('h3' , row).html('هنوز هیچ موردی رو انتخاب نکردی');
-                $('p' , row).html('چت مورد نظرت رو انتخاب کن تا پیاماشو ببینی');
-                $('.chat').append(row);
-                kh_main.service.get(link, function (response) {
-                    kh_main.Loding.hide();
-                    if (response.messageType == 1) {
-                        var data = response.objectResult;
-                        for (let index = 0; index < data.length; index++) {
-                            const item = data[index];
-                
-                            var row = $('.components .temprow .users').clone();
-                            $(row).attr('data-id',item.id)
-                            $('h3' , row).html(item.subject);
-                            $('#content' , row).html(item.description);
-                            $('.date' , row).html('14t');
-                            $('.contacts').append(row);
-                        }
-                    }
-                    else {
-                        console.log(response);
-                        alert(response.message);
-                    }
-                
-                },token);
-        }
+                    var row = $('.components .temprow .users').clone();
+                    $(row).attr('data-id',item.id)
+                    $(row).attr('data-name',subject)
+                    $('h3' , row).html(subject);
+                    $('#content' , row).html(description);
+                    $('.date' , row).html('14t');
+                    $('.main-content', row).attr('data-id', item.id);
+                    $('.contacts').append(row);
+                    
+                }
         else {
             console.log(response);
             alert(response.message);
