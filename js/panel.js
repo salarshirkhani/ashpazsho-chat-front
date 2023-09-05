@@ -125,14 +125,17 @@ function  loadchat(){
 }
 
 function SendMessage(){
-
     if($('#message').val() != undefined || $('#message').val() != ''){
     //SEND DATA 
+    debugger
     var link = 'userTicket/Message';
-    var json= {'supportId':$('.selected-chat').attr('data-id') , 'content':$('#message').val()}
-    kh_main.service.post(link,json, function (response) {
+    var json= {'supportId':getlink('chatinfo') , 'content':$('#message').val()}
+    kh_main.service.post(link,json, function (response) { 
         if (response.messageType == 1) {   
+            kh_main.Loding.hide();
+
             $('#message').val(undefined);
+            $('.chat .nothing:not(.temp)').remove();
             const item = response.objectResult;
             if (item.senderId == '29') {
                 var row2 = $('.components .temprow .message-right').clone();
@@ -173,16 +176,17 @@ function SendMessage(){
     else{
         alert('مقدار نا معنبر');
     }
-    } 
+    }
 
     function endsupport(tag){
         debugger
         var id = $(tag).attr('data-id');
-        var link = 'userTicket/Close?id='+id;
-        kh_main.service.post(link, function (response) {
-            kh_main.Loding.hide();
+        var json= {'id':id}
+        var link = 'userTicket/Close';
+        kh_main.service.post(link,json, function (response) {        
             if (response.messageType == 1) {  
-                alert('done');
+                debugger
+                alert(item.status);
             }
         },token);
     } 
