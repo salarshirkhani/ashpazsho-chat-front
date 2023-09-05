@@ -134,7 +134,7 @@
 
 
 			if (token == undefined || token == "")
-				token = kh_main.cookie.getCookie("usertoken");
+				token = getCookie("usertoken");
 
 			var settings = {
 				//"url": "https://localhost:44351/User/GetById?id=1",
@@ -156,7 +156,6 @@
 
 
 			kh_main.Loding.show();
-
 			if (serviceUrl == undefined)
 				serviceUrl = "";
 
@@ -166,7 +165,7 @@
 				serviceUrl = baseURL + serviceUrl;
 
 			if (token == undefined || token == "")
-				token = kh_main.cookie.getCookie("usertoken");;
+				token = getCookie("usertoken");;
 
 			var settings = {
 				//"url": "https://localhost:44351/User/GetById?id=1",
@@ -192,7 +191,7 @@
 
 			if (Jsonparameter.setion == undefined || Jsonparameter.setion == null || Jsonparameter.setion == '') {
 
-				Jsonparameter.setion = kh_main.cookie.getCookie('usersetion');
+				Jsonparameter.setion = getCookie('usersetion');
 
 			}
 
@@ -206,7 +205,7 @@
 				serviceUrl = baseURL + serviceUrl;
 
 			if (token == undefined || token == "")
-				token = kh_main.cookie.getCookie("usertoken");;
+				token = getCookie("usertoken");;
 
 			var scObject = {
 				"sqlCommand": sqlCommand,
@@ -235,7 +234,7 @@
 
 			if (Jsonparameter.setion == undefined || Jsonparameter.setion == null || Jsonparameter.setion == '') {
 
-				Jsonparameter.setion = kh_main.cookie.getCookie('usersetion');
+				Jsonparameter.setion = getCookie('usersetion');
 
 			}
 
@@ -258,7 +257,7 @@
 				serviceUrl = baseURL + serviceUrl;
 
 			if (token == undefined || token == "")
-				token = kh_main.cookie.getCookie("usertoken");
+				token = getCookie("usertoken");
 
 			//خواندن فیلدهای جلول
 			kh_main.service.sqlCommand("SELECT COLUMN_NAME as col_name FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = @tableName", { tableName: tabelName }, function (response) {
@@ -320,7 +319,7 @@
 		show: function () {
 			$('.lodingpage-style').remove();
 			$('.lodingpage').remove();
-			$('body').append('<style class="lodingpage-style">                        .lodingpage {                            position: absolute;                            width: 100%;                            height: 100%;                            background-color: #ffffffeb;                            z-index: 1000000000000000;                            top: 0;                            display: flex;                            align-content: center;                            justify-content: center;                            align-items: center;                            flex-direction: column;                        }                                                .lodingpage img {                                width: 130px;                                height: 130px;                            }                                            span.text-loding {                            font-weight: bold;                            margin-top: -18px;                            font-size: 18px;                        }                                        </style>                                        <div class="lodingpage">                        <img src="../img/spinner-sm.svg">                        <span class="text-loding"> لطفا صبر کنید ...  </span>                    </div>');
+			$('body').append('<style class="lodingpage-style">        .lodingpage {position: absolute;width: 100%;height: 100%;background-color: #ffffffeb;z-index: 1000000000000000;                            top: 0;                            display: flex;                            align-content: center;                            justify-content: center;                            align-items: center;                            flex-direction: column;                        }                                                .lodingpage img {                                width: 130px;                                height: 130px;                            }                                            span.text-loding {                            font-weight: bold;                            margin-top: -18px;                            font-size: 18px;                        }                                        </style>                                        <div class="lodingpage">                        <img src="../img/spinner-sm.svg">                        <span class="text-loding"> لطفا صبر کنید ...  </span>                    </div>');
 			$('.lodingpage').show();
 			$('.lodingpage').css('height', $('body').css('height'));
 

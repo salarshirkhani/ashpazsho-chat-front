@@ -3,6 +3,7 @@ function utilities(title){
     $(row).html(title);
 }
 function  Index(){
+
     $('.chat-head .right h3').css('display','none');
     $('.chat-head .right img').css('display','none');
     $('.chat-head .left button').css('display','none');
@@ -34,9 +35,8 @@ function  Index(){
             alert(response.message);
         }
     
-    },token);
+    },getCookie("usertoken"));
 }
-
 function  GetChats(status){
     var link = 'userTicket/Tickets?status='+status ;
     kh_main.service.get(link, function (response) {vhbjbnjbhnmk
@@ -61,7 +61,7 @@ function  GetChats(status){
             alert(response.message);
         }
     
-    },token);
+    },getCookie("usertoken"));
 }
 
 function  GetMessage(tag){
@@ -124,7 +124,7 @@ function  GetMessage(tag){
             alert(response.message);
         }
     
-    },token);
+    },getCookie("usertoken"));
 }
 
 function SendMessage(){
@@ -174,7 +174,7 @@ function SendMessage(){
             console.log(response);
             alert(response.message);
         } 
-        },token);
+        },getCookie("usertoken"));
     }
     else{
         alert('مقدار نا معنبر');
@@ -222,7 +222,7 @@ function SendTicket(){
             console.log(response);
             alert(response.message);
         } 
-        },token);
+        },getCookie("usertoken"));
     }
     else{
         alert('مقدار نا معنبر');
