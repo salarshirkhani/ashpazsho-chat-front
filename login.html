@@ -7,8 +7,8 @@
     <title>داشبورد </title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.rtl.min.css" integrity="sha384-gXt9imSW0VcJVHezoNQsP+TNrjYXoGcrqBZJpry9zJt8PCQjobwmhMGaDHTASo9N" crossorigin="anonymous">
     <link rel="stylesheet" href="style/main.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="js/persian-date.js"></script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="toastr/toastr.min.css">
 </head>
 <body style="background: #EDF1F7;">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>  
@@ -17,7 +17,7 @@
             <div class="col-12">
                 <div class="login-box">
                 <img class="logo" src="img/logo-light.png">
-                 <form>
+                 <div class="form">
                     <input name="username" required id="username" placeholder="نام کاربری" >
                     <input name="password" type="password" required id="password" placeholder="رمز عبور" >
                         <button onclick="login()">
@@ -26,7 +26,7 @@
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M9.93929 12.6465L7.69205 11.8974L7.69205 11.8974L7.69204 11.8974C5.33883 11.113 4.16223 10.7208 4.16223 10C4.16223 9.27924 5.33884 8.88704 7.69205 8.10264L16.2052 5.26491C17.861 4.71299 18.6889 4.43702 19.1259 4.87404C19.5629 5.31105 19.287 6.13895 18.735 7.79474L15.8973 16.3079L15.8973 16.3079L15.8973 16.3079C15.1129 18.6611 14.7207 19.8377 14 19.8377C13.2792 19.8377 12.887 18.6611 12.1026 16.3079L11.3535 14.0607L15.7071 9.70711C16.0976 9.31659 16.0976 8.68342 15.7071 8.2929C15.3165 7.90237 14.6834 7.90237 14.2928 8.2929L9.93929 12.6465Z" fill="white"/>
                             </svg>
                         </button>
-                 </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -34,10 +34,10 @@
 
 
     <!--javascript-->
-    <script src="js/auth.js"></script>
-    <script src="js/script.js"></script>
+    <script src="toastr/toastr.min.js"></script>
     <script src="js/kh_main.js"></script>
-    <script src="js/sidebar.js"></script>
+    <script src="js/cookie.js"></script>
+    <script src="js/auth.js"></script>
 </body>
 
 </html>

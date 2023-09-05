@@ -1,1 +1,32 @@
-token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyOSIsImp0aSI6ImVjNmRjNzE2LWY0YjctNDdhMS04NDViLTdlMDA5Zjc3MDRlZSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiMDkxMjc5NzYxOTAiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOlsicHVibGljIiwiYWRtaW5UaWNrZXQiXSwiZXhwIjoxNjkzODQzMTA2LCJpc3MiOiJNS0giLCJhdWQiOiJNS0gifQ.SpZs_2uowUvR5QADo4UF-fD_p-jB1IQR5Dk5dFudg3Y';
+token = '';
+toastr.info('برای استفاده از خدمات وارد شوید')
+function login(){
+    if($('#username').val() != undefined || $('#username').val() != ''&& 
+    $('#password').val() != undefined || $('#password').val() != ''){
+
+        //SEND DATA 
+        var link = 'Security/Login';
+        debugger
+        var json= {'username':$('#username').val() , 'password':$('#password').val()  }
+        kh_main.service.post(link,json, function (response) {
+            if (response.messageType == 1) { 
+                kh_main.Loding.hide();
+                const item = response.objectResult;
+                toastr.success('با موفقیت وارد شدید')
+                setCookie('token',item.token)
+                setCookie('user_id',item.userId)
+                setCookie('user_name',item.displayName)
+                setCookie('user_profile',item.pic)
+                }
+        else {
+            console.log(response);
+            kh_main.Loding.hide();
+            toastr.error('نام کاربری یا رمز عبور اشتباه است')
+            alert(response.message);
+        } 
+        });
+    }
+    else{
+        alert('مقدار نا معنبر');
+    }
+}
