@@ -86,7 +86,7 @@ function  loadchat(){
             for (let index = 0; index < data.length; index++) {
                 const item = data[index];
                 //if(item.senderid = kh_main.cookie.getvalue('userid')){
-                if(item.senderId == '29'){
+                if(item.senderId == getCookie("user_id")){
                     var row2 = $('.components .temprow .message-right').clone();
                     if(item.answerId == undefined){
                        $('.contain .reply',row2).remove();
@@ -101,7 +101,7 @@ function  loadchat(){
                 }
 
                 //if(item.senderid != kh_main.cookie.getvalue('userid')){
-                if(item.senderId != '29'){
+                if(item.senderId != getCookie("user_id")){
                     var row = $('.components .temprow .message-left').clone();
                     if(item.answerId == undefined){
                        $('.reply',row).remove();
@@ -137,7 +137,7 @@ function SendMessage(){
             $('#message').val(undefined);
             $('.chat .nothing:not(.temp)').remove();
             const item = response.objectResult;
-            if (item.senderId == '29') {
+            if (item.senderId == getCookie("user_id")) {
                 var row2 = $('.components .temprow .message-right').clone();
                 if (item.answerId == undefined) {
                     $('.contain .reply', row2).remove();
@@ -152,7 +152,7 @@ function SendMessage(){
             }
 
             //if(item.senderid != kh_main.cookie.getvalue('userid')){
-            if (item.senderId != '29') {
+            if (item.senderId != getCookie("user_id")) {
                 var row = $('.components .temprow .message-left').clone();
                 if (item.answerId == undefined) {
                     $('.reply', row).remove();

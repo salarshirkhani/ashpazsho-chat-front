@@ -3,7 +3,7 @@ function utilities(title){
     $(row).html(title);
 }
 function  Index(){
-
+    checkauth()
     $('.chat-head .right h3').css('display','none');
     $('.chat-head .right img').css('display','none');
     $('.chat-head .left button').css('display','none');
@@ -39,8 +39,8 @@ function  Index(){
 }
 function  GetChats(status){
     var link = 'userTicket/Tickets?status='+status ;
-    kh_main.service.get(link, function (response) {vhbjbnjbhnmk
-
+    kh_main.service.get(link, function (response) {
+        checkauth()
         kh_main.Loding.hide();
         if (response.messageType == 1) {
             var data = response.objectResult;
@@ -65,6 +65,7 @@ function  GetChats(status){
 }
 
 function  GetMessage(tag){
+    checkauth()
     var id = $(tag).attr('data-id');
     var title = $(tag).attr('data-name');
     utilities(title)
@@ -89,7 +90,7 @@ function  GetMessage(tag){
             for (let index = 0; index < data.length; index++) {
                 const item = data[index];
                 //if(item.senderid = kh_main.cookie.getvalue('userid')){
-                if(item.senderId == '29'){
+                if(item.senderId == getCookie("user_id")){
                     var row2 = $('.components .temprow .message-right').clone();
                     if(item.answerId == undefined){
                        $('.contain .reply',row2).remove();
@@ -104,7 +105,7 @@ function  GetMessage(tag){
                 }
 
                 //if(item.senderid != kh_main.cookie.getvalue('userid')){
-                if(item.senderId != '29'){
+                if(item.senderId != getCookie("user_id")){
                     var row = $('.components .temprow .message-left').clone();
                     if(item.answerId == undefined){
                        $('.reply',row).remove();
@@ -128,7 +129,7 @@ function  GetMessage(tag){
 }
 
 function SendMessage(){
-    debugger
+    checkauth()
     if($('#message').val() != undefined || $('#message').val() != ''){
     //SEND DATA 
 
@@ -140,7 +141,7 @@ function SendMessage(){
             $('#message').val(undefined);
             $('.chat .nothing:not(.temp)').remove();
             const item = response.objectResult;
-            if (item.senderId == '29') {
+            if (item.senderId == getCookie("user_id")) {
                 var row2 = $('.components .temprow .message-right').clone();
                 if (item.answerId == undefined) {
                     $('.contain .reply', row2).remove();
@@ -155,7 +156,7 @@ function SendMessage(){
             }
 
             //if(item.senderid != kh_main.cookie.getvalue('userid')){
-            if (item.senderId != '29') {
+            if (item.senderId != getCookie("user_id")) {
                 var row = $('.components .temprow .message-left').clone();
                 if (item.answerId == undefined) {
                     $('.reply', row).remove();
@@ -182,6 +183,7 @@ function SendMessage(){
     }
 
 function GetStartChat(){
+    checkauth()
     $('.selected-chat').removeClass('selected-chat');
     $('.chat .nothing:not(.temp)').remove();
     $('.chat .message-right').remove();
@@ -192,6 +194,7 @@ function GetStartChat(){
 }
 
 function SendTicket(){
+    checkauth()
     if($('#subject').val() != undefined || $('#subject').val() != '' && 
     $('#description').val() != undefined || $('#description').val() != '' && 
     $('#departmant').val() != undefined || $('#departmant').val() != '' ){

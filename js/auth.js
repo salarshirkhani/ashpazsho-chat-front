@@ -1,32 +1,27 @@
 function checkauth(){
-
-    if(getCookie("usertoken") != null && getCookie("usertoken") != undefined && getCookie("usertoken") != "null"){
-        var link = 'Security/CheckToken';
-        kh_main.service.get(link, function (response) {
-            kh_main.Loding.hide();
-            if (response.messageType == 1) {
-                window.location.href = 'index.html';
-            }
-            else {
-                window.location.href = 'login.html';
-            }
-        
-        },getCookie("usertoken"));
-    }
-    else{
+    if(getCookie("usertoken") == null || getCookie("usertoken") == undefined ){
         window.location.href = 'login.html';
     }
-
+    else{
+        if(getCookie("timelogin") == null || getCookie("timelogin") == undefined || getCookie("timelogin") == "null" || getCookie("timelogin") == "undefined"){
+            window.location.href = 'login.html';
+        }
+        else{
+            var currentDate = new Date();
+            var time = currentDate-getCookie("timelogin");
+            time = new Date(time);
+            if(time.getHours()>2){
+                window.location.href = 'login.html';
+            }
+        }
+    }
 }
 
 function login(){
-    if(getCookie("usertoken") != "null"){
-        window.location.href = 'index.html';
-    }
-    else{
+   
     if($('#username').val() != undefined || $('#username').val() != ''&& 
     $('#password').val() != undefined || $('#password').val() != ''){
-
+        var currentDate = new Date();
         //SEND DATA 
         var link = 'Security/Login';
         var json= {'username':$('#username').val() , 'password':$('#password').val()  }
@@ -34,12 +29,12 @@ function login(){
             if (response.messageType == 1) { 
                 kh_main.Loding.hide();
                 const item = response.objectResult;
-                debugger
                 toastr.success('با موفقیت وارد شدید')
                 setCookie('usertoken',item.token)
                 setCookie('user_id',item.userId)
                 setCookie('user_name',item.displayName)
                 setCookie('user_profile',item.pic)
+                setCookie('timelogin',currentDate)
                 window.location.href = 'index.html';
                 }
             else {
@@ -50,6 +45,5 @@ function login(){
     }
     else{
         alert('مقدار نا معنبر');
-    }
     }
 }
