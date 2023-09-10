@@ -102,6 +102,7 @@ body {
   font-family: "iranyekan";
   font-weight: 800;
   font-size: 13px;
+  width: 100%;
   margin-left: 30px;
 }
 .sidebar .archives-mobile a:hover {
@@ -117,6 +118,7 @@ body {
 .sidebar .contacts .users {
   display: inline-flex;
   padding-top: 15px;
+  width: 100%;
   background-color: #FBFBFB;
   border-bottom: 2px solid #C5C5C5;
 }
@@ -161,6 +163,8 @@ body {
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.19);
   margin-top: 5px;
   color: white;
+  position: fixed;
+  bottom: 10px;
   padding: 14px 10px;
   font-family: "iranyekan";
   border-radius: 10px;
@@ -280,6 +284,7 @@ body {
   display: inline-flex;
   margin-right: 10px;
   float: right;
+  width: 100%;
 }
 .content .chat .message-right p {
   background-color: #5142A8;
@@ -344,23 +349,105 @@ body {
   margin-top: 15px;
   font-size: 12px;
 }
+.content .chat .form {
+  border-radius: 36px;
+  background: #F8F8F8;
+  justify-content: center;
+  padding: 30px;
+  width: 97%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+}
+.content .chat .form h3 {
+  font-size: 16px;
+  font-family: "Iranyekanextrabold";
+  margin-top: 15px;
+}
+.content .chat .form p {
+  color: #535353;
+  font-family: "iranyekan";
+  font-weight: 400;
+  margin-top: 15px;
+  font-size: 12px;
+}
+.content .chat .form .start-ticket {
+  color: #535353;
+  font-family: "iranyekan";
+  font-weight: 400;
+  margin-top: 15px;
+  font-size: 15px;
+}
+.content .chat .form .start-ticket input {
+  padding: 10px;
+  flex-shrink: 0;
+  width: 100%;
+  border: 1px solid #979797;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+.content .chat .form .start-ticket textarea {
+  padding: 10px;
+  flex-shrink: 0;
+  width: 100%;
+  border: 1px solid #979797;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+.content .chat .form .start-ticket select {
+  padding: 10px;
+  color: #535353;
+  flex-shrink: 0;
+  margin-top: 15px;
+  width: 100%;
+  border: 1px solid #979797;
+  border-radius: 10px;
+}
+.content .chat .form .start-ticket option {
+  padding: 10px;
+  flex-shrink: 0;
+  width: 100%;
+  border: 1px solid #979797;
+  border-radius: 10px;
+}
+.content .chat .form .start-ticket button {
+  background: #3617F8;
+  padding: 11px;
+  margin: 15px 0px;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  font-family: "iranyekan";
+  font-weight: 400;
+  font-size: 15px;
+  width: 100%;
+}
+.content .chat .form .start-ticket button:hover {
+  background: #1f0c96;
+  transition: 0.5s;
+  background: #E37F09;
+}
 .content .send-message {
   display: none;
 }
-.content .send-message form {
+.content .send-message .sender {
   display: none;
 }
-.content .send-message form input {
+.content .send-message .sender input {
   display: none;
 }
-.content .send-message form button {
+.content .send-message .sender button {
   display: none;
 }
 .content .send-message-mobile {
   display: inline-flex;
   width: 100%;
+  position: fixed;
+  bottom: 9px;
+  left: 10px;
 }
-.content .send-message-mobile form {
+.content .send-message-mobile .sender {
   padding: 3px;
   margin-bottom: 13px;
   margin-top: 22px;
@@ -370,7 +457,7 @@ body {
   border-radius: 10px;
   border: 1px solid #C5C5C5;
 }
-.content .send-message-mobile form input {
+.content .send-message-mobile .sender input {
   border: none;
   padding: 4px;
   background: #F3F3F3;
@@ -379,7 +466,7 @@ body {
   margin-top: 20px;
   width: 200px;
 }
-.content .send-message-mobile form button {
+.content .send-message-mobile .sender button {
   background: #3617F8;
   padding: 11px;
   margin: 10px;

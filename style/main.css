@@ -128,6 +128,7 @@ a {
 }
 .sidebar .contacts .users img {
   margin-right: 15px;
+  width: 75%;
 }
 .sidebar .contacts .users h3 {
   font-size: 16px;

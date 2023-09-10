@@ -70,6 +70,7 @@ body{
             font-family: $mainfont;
             font-weight: 800;
             font-size: 13px;
+            width: 100%;
             margin-left: 30px;
 
         }
@@ -85,7 +86,8 @@ body{
         overflow-y: scroll;
         .users{
             display: inline-flex;
-            padding-top: 15px;
+            padding-top: 15px;    
+            width: 100%;
             background-color: $headcolor;
             border-bottom: 2px solid $bordercolor;
             img{
@@ -130,6 +132,8 @@ body{
             box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.19);
             margin-top: 5px;
             color: white;
+            position: fixed;
+            bottom: 10px;
             padding: 14px 10px;
             font-family: $mainfont;
             border-radius: 10px;
@@ -248,6 +252,7 @@ body{
             display: inline-flex;
             margin-right:10px;
             float: right;
+            width: 100%;
             p{
                 background-color: #5142A8;
                 color: white;
@@ -312,10 +317,88 @@ body{
                 font-size: 12px;
             }
         }
+        .form{
+            border-radius: 36px;
+            background: #F8F8F8;
+            justify-content: center;
+            padding: 30px;
+            width: 97%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 100px;
+            h3{
+                font-size: 16px;
+                font-family: $titlefont;
+                margin-top: 15px;
+            }
+            p{
+                color: #535353;
+                font-family: $mainfont;
+                font-weight: 400;
+                margin-top: 15px;
+                font-size: 12px;
+            }
+            .start-ticket{
+                color: #535353;
+                font-family: $mainfont;
+                font-weight: 400;
+                margin-top: 15px;
+                font-size: 15px;
+                input{
+                    padding: 10px;
+                    flex-shrink: 0;
+                    width: 100%;
+                    border: 1px solid #979797;
+                    border-radius: 10px;
+                    margin-top: 15px;
+                }
+                textarea{
+                    padding: 10px;
+                    flex-shrink: 0;
+                    width: 100%;
+                    border: 1px solid #979797;
+                    border-radius: 10px;
+                    margin-top: 15px;
+                }
+                select{
+                    padding: 10px;
+                    color: #535353;
+                    flex-shrink: 0;
+                    margin-top: 15px;
+                    width: 100%;
+                    border: 1px solid #979797;
+                    border-radius: 10px;
+                }
+                option{
+                    padding: 10px;
+                    flex-shrink: 0;
+                    width: 100%;
+                    border: 1px solid #979797;
+                    border-radius: 10px;
+                }
+                button{
+                    background: $maincolor;
+                    padding: 11px;
+                    margin: 15px 0px;
+                    color: white;
+                    border-radius: 10px;
+                    border: none;
+                    font-family: $mainfont;
+                    font-weight: 400;
+                    font-size: 15px;
+                    width: 100%;
+                }
+                button:hover{
+                    @include mainhover;
+                    background: $thirdcolor ; 
+                }
+            }
+        }
     }
     .send-message{
         display: none;
-        form{
+        .sender{
             display: none;
             input{
                 display: none;
@@ -328,7 +411,10 @@ body{
     .send-message-mobile{
         display: inline-flex;
         width: 100%;
-        form{
+        position: fixed;
+        bottom: 9px;
+        left: 10px;
+        .sender{
             padding: 3px;
             margin-bottom: 13px;
             margin-top: 22px;

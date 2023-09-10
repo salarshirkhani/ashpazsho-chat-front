@@ -4,6 +4,39 @@ function utilities(title){
 }
 function  Index(){
     checkauth()
+    if(window.innerWidth<920){
+        ShowChats()
+        $('.chat-head .right h3').css('display','none');
+        $('.chat-head .right img').css('display','none');
+        $('.chat-head .left button').css('display','none');
+        var link = 'userTicket/Tickets?status=all';
+        $('.send-message').css('display','none');
+        $('.chat').append(row);
+        kh_main.service.get(link, function (response) {
+            kh_main.Loding.hide();
+            if (response.messageType == 1) {
+                var data = response.objectResult;
+                for (let index = 0; index < data.length; index++) {
+                    const item = data[index];
+        
+                    var row = $('.components .temprow .users').clone();
+                    $(row).attr('data-id',item.id)
+                    $(row).attr('data-name',item.subject)
+                    $('h3' , row).html(item.subject);
+                    $('#content' , row).html(item.description);
+                    $('.date' , row).html(item.pcreatedate);
+                    $('.contacts').append(row);
+                }
+            }
+            else {
+                console.log(response);
+                alert(response.message);
+            }
+        
+        },getCookie("usertoken"));
+    }
+    else{
+    $('.menu').css('display','none'); 
     $('.chat-head .right h3').css('display','none');
     $('.chat-head .right img').css('display','none');
     $('.chat-head .left button').css('display','none');
@@ -37,6 +70,7 @@ function  Index(){
     
     },getCookie("usertoken"));
 }
+}
 function  GetChats(status){
     var link = 'userTicket/Tickets?status='+status ;
     kh_main.service.get(link, function (response) {
@@ -64,7 +98,81 @@ function  GetChats(status){
     },getCookie("usertoken"));
 }
 
-function  GetMessage(tag){
+function ShowChats(){
+    if(window.innerWidth<920){     
+        $('.sidebar').css('display','block'); 
+        $('.content').css('display','none'); 
+        $('.send-message-mobile').css('display','none');
+    } 
+}
+
+function GetMessage(tag){
+    checkauth()
+    if(window.innerWidth<920){     
+        $('.sidebar').css('display','none'); 
+        $('.content').css('display','block'); 
+        var id = $(tag).attr('data-id');
+        var title = $(tag).attr('data-name');
+        utilities(title)
+        $('.selected-chat').removeClass('selected-chat');
+        $(tag).addClass('selected-chat');
+        $('.chat .nothing:not(.temp)').remove();
+        $('.chat .message-right').remove();
+        $('.chat .form').remove();
+        $('.send-message-mobile').css('display','inline-flex');
+        var link = 'userTicket/Chats?chatinfo='+id ;
+        kh_main.service.get(link, function (response) {
+            kh_main.Loding.hide();
+            if (response.messageType == 1) {
+                var data = response.objectResult;
+                if(data.length== 0){
+                    var row = $('.components .temprow .nothing').clone();
+                    $(row).removeClass('temp');
+                    $('h3' , row).html('هنوز پیامی فرستاده نشده');
+                    $('p' , row).html('هرچی دل تنگت میخواد بنویس :)');
+                    $('.chat').append(row);
+                }
+                for (let index = 0; index < data.length; index++) {
+                    const item = data[index];
+                    //if(item.senderid = kh_main.cookie.getvalue('userid')){
+                    if(item.senderId == getCookie("user_id")){
+                        var row2 = $('.components .temprow .message-right').clone();
+                        if(item.answerId == undefined){
+                           $('.contain .reply',row2).remove();
+                        }
+                        else{
+                            $('.reply span' , row2).html(item.answercontent);
+                            $('.reply span' , row2).attr('data-answerid',item.answerId);
+                        }
+                        $('.main-content' , row2).html(item.content);
+                        $('.main-content' , row2).attr('data-id',item.id);
+                        $('.chat').append(row2);
+                    }
+    
+                    //if(item.senderid != kh_main.cookie.getvalue('userid')){
+                    if(item.senderId != getCookie("user_id")){
+                        var row = $('.components .temprow .message-left').clone();
+                        if(item.answerId == undefined){
+                           $('.reply',row).remove();
+                        }
+                        else{
+                            $('.reply span' , row).html(item.answercontent);
+                            $('.reply span' , row).attr('data-answerid',item.answerId);
+                        }
+                        $('.main-content' , row).html(item.content);
+                        $('.main-content' , row).attr('data-id',item.id);
+                    }
+    
+                }
+            }
+            else {
+                console.log(response);
+                alert(response.message);
+            }
+        
+        },getCookie("usertoken"));
+    }
+    else{
     checkauth()
     var id = $(tag).attr('data-id');
     var title = $(tag).attr('data-name');
@@ -76,7 +184,7 @@ function  GetMessage(tag){
     $('.chat .form').remove();
     $('.send-message').css('display','inline-flex');
     var link = 'userTicket/Chats?chatinfo='+id ;
-        kh_main.service.get(link, function (response) {
+    kh_main.service.get(link, function (response) {
         kh_main.Loding.hide();
         if (response.messageType == 1) {
             var data = response.objectResult;
@@ -126,6 +234,7 @@ function  GetMessage(tag){
         }
     
     },getCookie("usertoken"));
+}
 }
 
 function SendMessage(){
@@ -184,6 +293,18 @@ function SendMessage(){
 
 function GetStartChat(){
     checkauth()
+    if(window.innerWidth<920){     
+        $('.sidebar').css('display','none'); 
+        $('.content').css('display','block'); 
+        $('.selected-chat').removeClass('selected-chat');
+        $('.chat .nothing:not(.temp)').remove();
+        $('.chat .message-right').remove();
+        $('.send-message').css('display','none');
+        utilities('ایجاد تیکت جدید')
+        var row = $('.components .temprow .form').clone();
+        $('.chat').append(row);    
+    }
+    else{
     $('.selected-chat').removeClass('selected-chat');
     $('.chat .nothing:not(.temp)').remove();
     $('.chat .message-right').remove();
@@ -191,6 +312,7 @@ function GetStartChat(){
     utilities('ایجاد تیکت جدید')
     var row = $('.components .temprow .form').clone();
     $('.chat').append(row);    
+    }
 }
 
 function SendTicket(){
