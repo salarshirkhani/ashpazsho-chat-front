@@ -216,7 +216,60 @@ function SendMessage(){
     else{
         alert('مقدار نا معنبر');
     }
+}
+
+function SendMessageMobile(){
+    checkauth()
+    if($('#messagemobile').val() != undefined || $('#messagemobile').val() != ''){
+    //SEND DATA 
+
+    var link = 'userTicket/Message';
+    var json= {'supportId':$('.selected-chat').attr('data-id') , 'content':$('#messagemobile').val()}
+    kh_main.service.post(link,json, function (response) { 
+        if (response.messageType == 1) {   
+            kh_main.Loding.hide();
+            $('#messagemobile').val(undefined);
+            $('.chat .nothing:not(.temp)').remove();
+            const item = response.objectResult;
+            if (item.senderId == getCookie("user_id")) {
+                var row2 = $('.components .temprow .message-right').clone();
+                if (item.answerId == undefined) {
+                    $('.contain .reply', row2).remove();
+                }
+                else {
+                    $('.reply span', row2).html(item.answercontent);
+                    $('.reply span', row2).attr('data-answerid', item.answerId);
+                }
+                $('.main-content', row2).html(item.content);
+                $('.main-content', row2).attr('data-id', item.id);
+                $('.chat').append(row2);
+            }
+
+            //if(item.senderid != kh_main.cookie.getvalue('userid')){
+            if (item.senderId != getCookie("user_id")) {
+                var row = $('.components .temprow .message-left').clone();
+                if (item.answerId == undefined) {
+                    $('.reply', row).remove();
+                }
+                else {
+                    $('.reply span', row).html(item.answercontent);
+                    $('.reply span', row).attr('data-answerid', item.answerId);
+                }
+                $('.main-content', row).html(item.content);
+                $('.main-content', row).attr('data-id', item.id);
+            }
+
+        }
+        else {
+            console.log(response);
+            alert(response.message);
+        } 
+        },getCookie("usertoken"));
     }
+    else{
+        alert('مقدار نا معنبر');
+    }
+}
 
 function GetStartChat(){
     checkauth()

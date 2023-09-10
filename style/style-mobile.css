@@ -32,7 +32,6 @@ body {
 }
 
 .mobile-row {
-  display: flex !important;
   flex-wrap: nowrap !important;
   overflow-y: scroll !important;
   width: 100%;
@@ -232,7 +231,7 @@ body {
 }
 .content .chat {
   padding: 10px;
-  height: 620px;
+  height: 500px;
   overflow-x: hidden;
   overflow-y: scroll;
 }
@@ -253,6 +252,7 @@ body {
   font-weight: 400;
   margin-left: 10px;
   border-radius: 15px;
+  word-break: break-all;
   padding: 10px;
   font-size: 12px;
 }
@@ -294,6 +294,7 @@ body {
   margin-right: 10px;
   border-radius: 15px;
   padding: 10px;
+  word-break: break-all;
   font-size: 12px;
 }
 .content .chat .message-right p .time {

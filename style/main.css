@@ -259,6 +259,7 @@ a {
   margin-left: 10px;
   border-radius: 15px;
   padding: 10px;
+  word-break: break-all;
   font-size: 12px;
 }
 .content .chat .message-left p .time {
@@ -299,6 +300,7 @@ a {
   margin-right: 10px;
   border-radius: 15px;
   padding: 10px;
+  word-break: break-all;
   font-size: 12px;
 }
 .content .chat .message-right p .time {
