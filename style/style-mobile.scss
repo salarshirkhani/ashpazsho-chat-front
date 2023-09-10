@@ -398,6 +398,12 @@ body{
     }
     .send-message{
         display: none;
+        .reply-send{
+            display: none;
+            span{
+                display: none;
+            }
+        }
         .sender{
             display: none;
             input{
@@ -409,16 +415,30 @@ body{
         }
     }
     .send-message-mobile{
-        display: inline-flex;
+        display: block;
         width: 100%;
         position: fixed;
         bottom: 9px;
         left: 10px;
+        .reply-send{
+            padding: 5px;
+            position: relative;
+            margin-right: 20px;
+            background: #F3F3F3;
+            border-radius: 10px 10px 0px 0px;
+            border: 1px solid #c5c5c5;
+            bottom: -30px;
+            span{
+                font-family: $mainfont;
+                font-size: 13px;
+                font-weight: 600;
+                color: #9d9d9d;
+            }
+        }
         .sender{
             padding: 3px;
             margin-bottom: 13px;
             margin-top: 22px;
-            width: 100%;
             margin-right: 20px;
             background: #F3F3F3;
             border-radius: 10px;
@@ -426,6 +446,7 @@ body{
             input{
                 border: none;
                 padding: 4px;
+                
                 background: #F3F3F3;
                 font-family: $mainfont;
                 font-size: 14px;

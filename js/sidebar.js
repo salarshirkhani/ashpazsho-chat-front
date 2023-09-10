@@ -28,7 +28,7 @@ function HideChats(){
         $('.content').css('display','block'); 
         $('.menu').css('display','block'); 
         $('.new-ticket-button').css('display','none');
-        $('.send-message-mobile').css('display','inline-flex');
+        $('.send-message-mobile').css('display','block');
     } 
 }
 
@@ -106,7 +106,7 @@ function GetMessage(tag){
     $('.chat .nothing:not(.temp)').remove();
     $('.chat .message-right').remove();
     $('.chat .form').remove();
-    $('.send-message').css('display','inline-flex');
+    $('.send-message').css('display','block');
     var link = 'userTicket/Chats?chatinfo='+id ;
     kh_main.service.get(link, function (response) {
         kh_main.Loding.hide();

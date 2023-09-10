@@ -394,8 +394,24 @@
         }
     }
     .send-message{
-        display: inline-flex;
+        display: block;
         width: 100%;
+        .reply-send{
+            padding: 5px;
+            width: 100%;
+            position: relative;
+            margin-right: 20px;
+            background: #F3F3F3;
+            border-radius: 10px 10px 0px 0px;
+            border: 1px solid #c5c5c5;
+            bottom: -30px;
+            span{
+                font-family: $mainfont;
+                font-size: 13px;
+                font-weight: 600;
+                color: #9d9d9d;
+            }
+        }
         .sender{
             padding: 3px;
             margin-bottom: 13px;
