@@ -277,6 +277,7 @@ a {
   margin-left: 10px;
   border-radius: 15px 15px 0px 0px;
   padding: 7px;
+  word-break: break-all;
   position: relative;
   font-size: 12px;
   top: 10px;
@@ -453,6 +454,7 @@ a {
   font-family: "iranyekan";
   font-size: 13px;
   font-weight: 600;
+  word-break: break-all;
   color: #9d9d9d;
 }
 .content .send-message .sender {
