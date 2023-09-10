@@ -112,6 +112,7 @@ function GetMessage(tag){
         kh_main.Loding.hide();
         if (response.messageType == 1) {
             var data = response.objectResult;
+
             if(data.length== 0){
                 var row = $('.components .temprow .nothing').clone();
                 $(row).removeClass('temp');
@@ -119,7 +120,9 @@ function GetMessage(tag){
                 $('p' , row).html('هرچی دل تنگت میخواد بنویس :)');
                 $('.chat').append(row);
             }
+
             for (let index = 0; index < data.length; index++) {
+
                 const item = data[index];
                 //if(item.senderid = kh_main.cookie.getvalue('userid')){
                 if(item.senderId == getCookie("user_id")){
@@ -132,7 +135,9 @@ function GetMessage(tag){
                         $('.reply span' , row2).attr('data-answerid',item.answerId);
                     }
                     $('.main-content' , row2).html(item.content);
-                    $('.main-content' , row2).attr('data-id',item.id);
+                    $('.rep-button' , row2).attr('data-id',item.id);
+                    $('.rep-button' , row2).attr('data-text',item.content);
+
                     $('.chat').append(row2);
                 }
 
@@ -147,7 +152,9 @@ function GetMessage(tag){
                         $('.reply span' , row).attr('data-answerid',item.answerId);
                     }
                     $('.main-content' , row).html(item.content);
-                    $('.main-content' , row).attr('data-id',item.id);
+                    $('.rep-button' , row).attr('data-id',item.id);
+                    $('.rep-button' , row).attr('data-text',item.content);
+
                 }
 
             }
@@ -162,6 +169,19 @@ function GetMessage(tag){
     
     },getCookie("usertoken"));
 
+}
+
+function ShowReply(tag){
+    $('.send-message-mobile .rep .reply-send').remove();
+    var row = $('.components .temprow .reply-send').clone();
+    $('span' , row).html( $(tag).attr('data-text'));
+    $(row).attr('data-id', $(tag).attr('data-id'));   
+    if(window.innerWidth<920){
+        $('.send-message-mobile .rep').append(row);
+    }
+    else{
+        $('.send-message .rep').append(row);
+    }
 }
 
 function SendMessage(){
