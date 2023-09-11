@@ -97,7 +97,8 @@ function  GetChats(status){
 
 function GetMessage(tag){
     checkauth()
-
+    $('.send-message-mobile .rep .reply-send').remove();
+    $('.send-message .rep .reply-send').remove();
     var id = $(tag).attr('data-id');
     var title = $(tag).attr('data-name');
     utilities(title)
@@ -112,7 +113,7 @@ function GetMessage(tag){
         kh_main.Loding.hide();
         if (response.messageType == 1) {
             var data = response.objectResult;
-
+            $('.menu').css('display','none'); 
             if(data.length== 0){
                 var row = $('.components .temprow .nothing').clone();
                 $(row).removeClass('temp');
@@ -173,8 +174,10 @@ function GetMessage(tag){
 
 function ShowReply(tag){
     $('.send-message-mobile .rep .reply-send').remove();
+    $('.send-message .rep .reply-send').remove();
     var row = $('.components .temprow .reply-send').clone();
     $('span' , row).html( $(tag).attr('data-text'));
+    $('input' , row).attr('value', $(tag).attr('data-id'));   
     $(row).attr('data-id', $(tag).attr('data-id'));   
     if(window.innerWidth<920){
         $('.send-message-mobile .rep').append(row);
@@ -188,9 +191,13 @@ function SendMessage(){
     checkauth()
     if($('#message').val() != undefined || $('#message').val() != ''){
     //SEND DATA 
-
     var link = 'userTicket/Message';
-    var json= {'supportId':$('.selected-chat').attr('data-id') , 'content':$('#message').val()}
+    if($('#answer_id').val() != "0"){
+    var json= {'supportId':$('.selected-chat').attr('data-id') , 'content':$('#message').val(),  'answerId':$('#answer_id').val()}
+    }
+    else{
+    var json= {'supportId':$('.selected-chat').attr('data-id') , 'content':$('#message').val(), }      
+    }
     kh_main.service.post(link,json, function (response) { 
         if (response.messageType == 1) {   
             kh_main.Loding.hide();

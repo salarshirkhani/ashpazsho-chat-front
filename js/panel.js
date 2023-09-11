@@ -5,8 +5,8 @@ function utilities(title){
 }
 
 function  Index(){
-    
-    var link = 'userTicket/Tickets?status=all';
+    checkauth() 
+    var link = 'adminTicket/GetManagePost';
     kh_main.service.get(link, function (response) {
         kh_main.Loding.hide();
         if (response.messageType == 1) {
@@ -36,7 +36,7 @@ function  Index(){
             alert(response.message);
         }
     
-    },token);
+    },getCookie("usertoken"));
 }
 
 function getlink(kname){
@@ -52,17 +52,20 @@ function getlink(kname){
 }
 
 function  call(tag){
+    debugger
     var id = $(tag).attr('data-id');
     var title = $(tag).attr('data-name');
     setCookie('htitle',title)
+    setCookie('hid',id)
 
-    window.location.href = 'adminchat.html?chatinfo='+id+'&title='+title;
+    window.location.href = 'adminchat.html';
 
 }
 
 function  loadchat(){
-
-    var id = getlink('chatinfo');
+    checkauth()  
+    debugger
+    var id = getCookie('hid');
     var title = getCookie('htitle');
     utilities(title)
     $('.selected-chat').removeClass('selected-chat');
@@ -71,8 +74,9 @@ function  loadchat(){
     $('.chat .form').remove();
     $('.send-message').css('display','inline-flex');
     $('.left .support-button').attr('data-id',id)
-    var link = 'userTicket/Chats?chatinfo='+id ;
-        kh_main.service.get(link, function (response) {
+    var link = 'adminTicket/ShowPost' ;
+    var json= {'id':id }      
+        kh_main.service.post(link,json, function (response) {
         kh_main.Loding.hide();
         if (response.messageType == 1) {
             var data = response.objectResult;
@@ -85,7 +89,6 @@ function  loadchat(){
             }
             for (let index = 0; index < data.length; index++) {
                 const item = data[index];
-                //if(item.senderid = kh_main.cookie.getvalue('userid')){
                 if(item.senderId == getCookie("user_id")){
                     var row2 = $('.components .temprow .message-right').clone();
                     if(item.answerId == undefined){
@@ -100,7 +103,6 @@ function  loadchat(){
                     $('.chat').append(row2);
                 }
 
-                //if(item.senderid != kh_main.cookie.getvalue('userid')){
                 if(item.senderId != getCookie("user_id")){
                     var row = $('.components .temprow .message-left').clone();
                     if(item.answerId == undefined){
@@ -121,10 +123,11 @@ function  loadchat(){
             alert(response.message);
         }
     
-    },token);
+    },getCookie("usertoken"));
 }
 
 function SendMessage(){
+    checkauth()  
     if($('#message').val() != undefined || $('#message').val() != ''){
     //SEND DATA 
     debugger
@@ -171,7 +174,7 @@ function SendMessage(){
             console.log(response);
             alert(response.message);
         } 
-        },token);
+        },getCookie("usertoken"));
     }
     else{
         alert('مقدار نا معنبر');
@@ -179,7 +182,7 @@ function SendMessage(){
     }
 
     function endsupport(tag){
-        debugger
+        checkauth()  
         var id = $(tag).attr('data-id');
         var json= {'id':id}
         var link = 'userTicket/Close';
@@ -188,5 +191,5 @@ function SendMessage(){
                 debugger
                 alert(item.status);
             }
-        },token);
+        },getCookie("usertoken"));
     } 
