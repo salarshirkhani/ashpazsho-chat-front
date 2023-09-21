@@ -18,32 +18,48 @@ function checkauth(){
 }
 
 function login(){
-   
-    if($('#username').val() != undefined || $('#username').val() != ''&& 
-    $('#password').val() != undefined || $('#password').val() != ''){
+    if($('#username').val() != undefined || $('#username').val() != ''){
         var currentDate = new Date();
         //SEND DATA 
-        var link = 'Security/Login';
-        var json= {'username':$('#username').val() , 'password':$('#password').val()  }
+        var link = 'auth/login';
+        var json= {'mobile':$('#username').val() }
+        try{
         kh_main.service.post(link,json, function (response) { 
-            if (response.messageType == 1) { 
+            if (response.status == true) { 
                 kh_main.Loding.hide();
                 const item = response.objectResult;
                 toastr.success('با موفقیت وارد شدید')
                 setCookie('usertoken',item.token)
-                setCookie('user_id',item.userId)
-                setCookie('user_name',item.displayName)
-                setCookie('user_profile',item.pic)
+                setCookie('user_id',item.id)
+                setCookie('user_name',item.name)
                 setCookie('timelogin',currentDate)
                 window.location.href = 'index.html';
-                }
+            }
             else {
                 kh_main.Loding.hide();
-                toastr.error('نام کاربری یا رمز عبور اشتباه است')
+                toastr.error('اطلاعات ورود اشتباه است')
             } 
         });
+    }
+    catch{
+        kh_main.Loding.hide();
+        toastr.error('اطلاعات ورود اشتباه است')
+    }
     }
     else{
         alert('مقدار نا معنبر');
     }
+    kh_main.Loding.hide();
+}
+
+function getlink(kname){
+    var url = window.location.href;     
+    var params = url.split('?')[1].split('&');
+    for (let index = 0; index < params.length; index++) {
+        const param = params[index].split('=');
+        if(param[0]==kname){
+            return param[1];
+        }       
+    }
+    return undefined;
 }

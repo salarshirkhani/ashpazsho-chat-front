@@ -1,7 +1,7 @@
 ﻿kh_main = {
 
 	//***************** const **********************
-	"ApiBaseURL": "http://212.33.199.113:1516/",
+	"ApiBaseURL": "http://localhost:8000/api/",
 	//"ApiBaseURL": "https://localhost:44300/",
 
 	//***************** end const *******************

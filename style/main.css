@@ -37,14 +37,14 @@ a {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #3617F8;
+  background: #C83232;
   border-radius: 20px;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #1f0c96;
+  background: #9B2424;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
@@ -82,7 +82,7 @@ a {
   border: none;
 }
 .sidebar .search-side .look {
-  background: #3617F8;
+  background: #C83232;
   padding: 5px;
   border-radius: 10px;
   border: none;
@@ -92,14 +92,14 @@ a {
   transition: 0.5s;
 }
 .sidebar .search-side .look :hover {
-  background: #1f0c96;
+  background: #9B2424;
   transition: 0.5s;
 }
 .sidebar .archives-mobile {
   display: none;
 }
 .sidebar .archives {
-  background-color: #E3F6FB;
+  background-color: #FFCACA;
   padding: 10px;
   padding-right: 20px;
 }
@@ -110,9 +110,9 @@ a {
   font-size: 13px;
 }
 .sidebar .archives a:hover {
-  color: #3617F8;
+  color: #C83232;
   padding-bottom: 9px;
-  border-bottom: 2px solid #3617F8;
+  border-bottom: 2px solid #C83232;
 }
 .sidebar .contacts {
   height: 600px;
@@ -155,7 +155,7 @@ a {
   font-weight: 800;
 }
 .sidebar .contacts .users:hover {
-  background-color: #E3F6FB !important;
+  background-color: #FFCACA !important;
   cursor: pointer;
 }
 .sidebar .last-row {
@@ -244,6 +244,7 @@ a {
   display: inline-flex;
   margin-left: 10px;
   float: left;
+  justify-content: left;
   width: 100%;
 }
 .content .chat .message-left img {
@@ -252,7 +253,7 @@ a {
   margin-bottom: 14px;
 }
 .content .chat .message-left p {
-  background-color: #0D0D0D;
+  background-color: #E37F09;
   color: white;
   font-family: "iranyekan";
   font-weight: 400;
@@ -270,7 +271,7 @@ a {
   margin: 2px;
 }
 .content .chat .message-left .reply {
-  background: #414141;
+  background: #AC620B;
   color: white;
   font-family: "iranyekan";
   font-weight: 400;
@@ -294,7 +295,7 @@ a {
   width: 100%;
 }
 .content .chat .message-right p {
-  background-color: #5142A8;
+  background-color: #C00000;
   color: white;
   font-family: "iranyekan";
   font-weight: 400;
@@ -317,7 +318,7 @@ a {
   margin-bottom: 14px;
 }
 .content .chat .message-right .reply {
-  background-color: #3D3570;
+  background-color: #9B2424;
   color: white;
   font-family: "iranyekan";
   font-weight: 400;
@@ -420,7 +421,7 @@ a {
   border-radius: 10px;
 }
 .content .chat .form .start-ticket button {
-  background: #3617F8;
+  background: #C83232;
   padding: 11px;
   margin: 15px 0px;
   color: white;
@@ -432,7 +433,7 @@ a {
   width: 100%;
 }
 .content .chat .form .start-ticket button:hover {
-  background: #1f0c96;
+  background: #9B2424;
   transition: 0.5s;
   background: #E37F09;
 }
@@ -477,7 +478,7 @@ a {
   width: 600px;
 }
 .content .send-message .sender button {
-  background: #3617F8;
+  background: #C83232;
   padding: 11px;
   margin: 10px;
   color: white;
@@ -527,13 +528,13 @@ a {
   padding: 10px;
   flex-shrink: 0;
   font-family: "iranyekan";
-  width: 100%;
+  width: 99%;
   border: 1px solid #979797;
   border-radius: 10px;
   margin-top: 15px;
 }
 .login-box .form button {
-  background: #3617F8;
+  background: #C83232;
   padding: 11px;
   margin: 15px 0px;
   margin-top: 50px;
@@ -546,5 +547,36 @@ a {
   width: 100%;
 }
 .login-box .form button:hover {
-  background: #1f0c96;
+  background: #9B2424;
+}
+
+.modal button {
+  background: #C83232;
+  padding: 11px;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  font-family: "iranyekan";
+  font-weight: 400;
+  font-size: 15px;
+}
+.modal .close {
+  background: #C83232;
+  margin: 0px 0px 0px 0px !important;
+  padding: 7px !important;
+}
+
+.modalinput {
+  padding: 10px !important;
+  flex-shrink: 0;
+  font-family: "iranyekan";
+  width: 99%;
+  border: 1px solid #979797;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+.alert {
+  font-family: "iranyekan";
+  font-size: 13px;
 }/*# sourceMappingURL=main.css.map */

@@ -204,6 +204,7 @@
             display: inline-flex;
             margin-left:10px;
             float: left;
+            justify-content: left;
             width:100%;
             img{
                 width: 46px;
@@ -211,7 +212,7 @@
                 margin-bottom: 14px;
             }
             p{
-                background-color: #0D0D0D;
+                background-color: #E37F09;
                 color: white;
                 font-family: $mainfont;
                 font-weight: 400;
@@ -229,7 +230,7 @@
                 }
             }
             .reply{
-                background: #414141;
+                background: #AC620B;
                 color: white;
                 font-family: $mainfont;
                 font-weight: 400;
@@ -253,7 +254,7 @@
             float: right;
             width:100%;
             p{
-                background-color: #5142A8;
+                background-color: #C00000;
                 color: white;
                 font-family: $mainfont;
                 font-weight: 400;
@@ -276,7 +277,7 @@
                 margin-bottom: 14px;
             }
             .reply{
-                background-color: #3D3570;
+                background-color: #9B2424;
                 color: white;
                 font-family: "iranyekan";
                 font-weight: 400;
@@ -485,7 +486,7 @@
             padding: 10px;
             flex-shrink: 0;
             font-family: $mainfont;
-            width: 100%;
+            width: 99%;
             border: 1px solid #979797;
             border-radius: 10px;
             margin-top: 15px;
@@ -507,4 +508,34 @@
             background: $mainhovercolor;
         }
     }
+}
+.modal{
+    button{
+        background: $maincolor;
+        padding: 11px;
+        color: white;
+        border-radius: 10px;
+        border: none;
+        font-family: $mainfont;
+        font-weight: 400;
+        font-size: 15px;
+    }
+    .close{
+        background: $maincolor;
+        margin: 0px 0px 0px 0px !important;
+        padding: 7px !important;
+    } 
+}
+.modalinput{
+    padding: 10px !important;
+    flex-shrink: 0;
+    font-family: $mainfont;
+    width: 99%;
+    border: 1px solid #979797;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+.alert{
+    font-family: $mainfont;
+    font-size: 13px;
 }
