@@ -138,6 +138,7 @@ function GetMessage(tag){
                         $('.reply span' , row2).attr('data-answerid',item.answer_id);
                     }
                     $('.main-content' , row2).html(item.content);
+                    $('.main-content' , row2).attr('data-id',item.id);
                     $('.rep-button' , row2).attr('data-id',item.id);
                     $('.rep-button' , row2).attr('data-text',item.content);
 
@@ -155,6 +156,7 @@ function GetMessage(tag){
                         $('.reply span' , row).attr('data-answerid',item.answer_id);
                     }
                     $('.main-content' , row).html(item.content);
+                    $('.main-content' , row).attr('data-id',item.id);
                     $('.rep-button' , row).attr('data-id',item.id);
                     $('.rep-button' , row).attr('data-text',item.content);
                     $('.chat').append(row);
@@ -189,46 +191,20 @@ function ShowReply(tag){
     }
 }
 
-function DeleteMessage(){
+function DeleteMessage(tag){
     let text = "آیا میخواهید این پیام را حذف کنید";
     if (confirm(text) == true) {
         checkauth()
-        var link = 'userticket/message';
+        var link = 'userticket/delete';
+        id =$(tag).attr('data-id');
+        var json= {'id':$(tag).attr('data-id')};
         kh_main.service.post(link,json, function (response) { 
             if (response.status == true) { 
                 kh_main.Loding.hide();
-                $('#message').val(undefined);
-                $('.chat .nothing:not(.temp)').remove();
-                const item = response.objectResult;
-                if (item.sender_id == getCookie("user_id")) {
-                    var row2 = $('.components .temprow .message-right').clone();
-                    if (item.answer_id == undefined) {
-                        $('.contain .reply', row2).remove();
-                    }
-                    else {
-                        $('.reply span', row2).html(item.answercontent);
-                        $('.reply span', row2).attr('data-answerid', item.answer_id);
-                    }
-                    $('.main-content', row2).html(item.content);
-                    $('.main-content', row2).attr('data-id', item.id);
-                    $('.chat').append(row2);
-                }
-    
-                //if(item.senderid != kh_main.cookie.getvalue('userid')){
-                if (item.sender_id != getCookie("user_id")) {
-                    var row = $('.components .temprow .message-left').clone();
-                    if (item.answer_id == undefined) {
-                        $('.reply', row).remove();
-                    }
-                    else {
-                        $('.reply span', row).html(item.answercontent);
-                        $('.reply span', row).attr('data-answerid', item.answer_id);
-                    }
-                    $('.main-content', row).html(item.content);
-                    $('.main-content', row).attr('data-id', item.id);
-                }
-    
-    
+                $(this).remove();
+                $('.chat .message-left', $(tag).attr('data-id')).remove();
+                toastr.success('پیام پاک شد');
+
             }
             else {
                 console.log(response);
