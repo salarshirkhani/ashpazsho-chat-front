@@ -169,12 +169,12 @@
                                 <div class="row">
                                     <p class="alert alert-info">شما میتوانید فایل ویدیویی یا عکس یا صدای خود را از این طریق ارسال کنید</p>
                                       <input class="modalinput" type ="file" name ="file" id ="file_input">
-                                      <input class="modalinput" type="text" id="message" name="message" placeholder="متن ارسالی خود را بنویسید ..." required >
+                                      <input class="modalinput" type="text" id="caption" name="caption" placeholder="متن ارسالی خود را بنویسید ..." required >
                                 </div>
                             </div>
                         </div>
                         <div class="modal-footer justify-content-between">
-                            <button class="btn btn-success btn-lg toastrDefaultInfo" onclick="document.getElementById('tronadd').submit();">
+                            <button class="btn btn-success btn-lg toastrDefaultInfo" onclick="SendMessageFile()">
                                 ارسال فایل
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M9.93929 12.6465L7.69205 11.8974L7.69205 11.8974L7.69204 11.8974C5.33883 11.113 4.16223 10.7208 4.16223 10C4.16223 9.27924 5.33884 8.88704 7.69205 8.10264L16.2052 5.26491C17.861 4.71299 18.6889 4.43702 19.1259 4.87404C19.5629 5.31105 19.287 6.13895 18.735 7.79474L15.8973 16.3079L15.8973 16.3079L15.8973 16.3079C15.1129 18.6611 14.7207 19.8377 14 19.8377C13.2792 19.8377 12.887 18.6611 12.1026 16.3079L11.3535 14.0607L15.7071 9.70711C16.0976 9.31659 16.0976 8.68342 15.7071 8.2929C15.3165 7.90237 14.6834 7.90237 14.2928 8.2929L9.93929 12.6465Z" fill="white"/>
@@ -311,7 +311,14 @@
                         <path d="M3 9.16667L2.22604 9.7999L1.70794 9.16667L2.22604 8.53343L3 9.16667ZM16 16.5C16 17.0523 15.5523 17.5 15 17.5C14.4477 17.5 14 17.0523 14 16.5L16 16.5ZM5.97604 14.3832L2.22604 9.7999L3.77396 8.53343L7.52396 13.1168L5.97604 14.3832ZM2.22604 8.53343L5.97604 3.95009L7.52396 5.21657L3.77396 9.7999L2.22604 8.53343ZM3 8.16667L9 8.16667L9 10.1667L3 10.1667L3 8.16667ZM16 15.1667L16 16.5L14 16.5L14 15.1667L16 15.1667ZM9 8.16667C12.866 8.16666 16 11.3007 16 15.1667L14 15.1667C14 12.4052 11.7614 10.1667 9 10.1667L9 8.16667Z" fill="#A7A7A7"/>
                     </svg>
                 </a>
-                
+                <a href="#" onclick="DeleteMessage(this)" data-id="" class="rep-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M10 15L10 12" stroke="#CCD2E3" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M14 15L14 12" stroke="#CCD2E3" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M3 7H21V7C20.0681 7 19.6022 7 19.2346 7.15224C18.7446 7.35523 18.3552 7.74458 18.1522 8.23463C18 8.60218 18 9.06812 18 10V16C18 17.8856 18 18.8284 17.4142 19.4142C16.8284 20 15.8856 20 14 20H10C8.11438 20 7.17157 20 6.58579 19.4142C6 18.8284 6 17.8856 6 16V10C6 9.06812 6 8.60218 5.84776 8.23463C5.64477 7.74458 5.25542 7.35523 4.76537 7.15224C4.39782 7 3.93188 7 3 7V7Z" stroke="#CCD2E3" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M10.0681 3.37059C10.1821 3.26427 10.4332 3.17033 10.7825 3.10332C11.1318 3.03632 11.5597 3 12 3C12.4403 3 12.8682 3.03632 13.2175 3.10332C13.5668 3.17033 13.8179 3.26427 13.9319 3.37059" stroke="#CCD2E3" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </a>
             </div>
         </div>
 
@@ -320,6 +327,14 @@
                 <a href="#" onclick="ShowReply(this)" data-text="0" data-id="0" class="rep-button">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
                         <path d="M16.6666 8.75L17.3908 9.43966L18.0476 8.75L17.3908 8.06034L16.6666 8.75ZM2.33329 15.75C2.33329 16.3023 2.78101 16.75 3.33329 16.75C3.88558 16.75 4.33329 16.3023 4.33329 15.75L2.33329 15.75ZM13.2241 13.8147L17.3908 9.43966L15.9425 8.06034L11.7758 12.4353L13.2241 13.8147ZM17.3908 8.06034L13.2241 3.68534L11.7758 5.06465L15.9425 9.43966L17.3908 8.06034ZM16.6666 7.75L9.33329 7.75L9.33329 9.75L16.6666 9.75L16.6666 7.75ZM2.33329 14.75L2.33329 15.75L4.33329 15.75L4.33329 14.75L2.33329 14.75ZM9.33329 7.75C5.4673 7.75 2.33329 10.884 2.33329 14.75L4.33329 14.75C4.33329 11.9886 6.57187 9.75 9.33329 9.75L9.33329 7.75Z" fill="#A7A7A7"/>
+                    </svg>
+                </a>
+                <a href="#" onclick="" data-id="" class="rep-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M10 15L10 12" stroke="#CCD2E3" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M14 15L14 12" stroke="#CCD2E3" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M3 7H21V7C20.0681 7 19.6022 7 19.2346 7.15224C18.7446 7.35523 18.3552 7.74458 18.1522 8.23463C18 8.60218 18 9.06812 18 10V16C18 17.8856 18 18.8284 17.4142 19.4142C16.8284 20 15.8856 20 14 20H10C8.11438 20 7.17157 20 6.58579 19.4142C6 18.8284 6 17.8856 6 16V10C6 9.06812 6 8.60218 5.84776 8.23463C5.64477 7.74458 5.25542 7.35523 4.76537 7.15224C4.39782 7 3.93188 7 3 7V7Z" stroke="#CCD2E3" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M10.0681 3.37059C10.1821 3.26427 10.4332 3.17033 10.7825 3.10332C11.1318 3.03632 11.5597 3 12 3C12.4403 3 12.8682 3.03632 13.2175 3.10332C13.5668 3.17033 13.8179 3.26427 13.9319 3.37059" stroke="#CCD2E3" stroke-width="2" stroke-linecap="round"/>
                     </svg>
                 </a>
                 <div class="contain">

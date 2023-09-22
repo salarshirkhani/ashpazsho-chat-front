@@ -189,6 +189,55 @@ function ShowReply(tag){
     }
 }
 
+function DeleteMessage(){
+    let text = "آیا میخواهید این پیام را حذف کنید";
+    if (confirm(text) == true) {
+        checkauth()
+        var link = 'userticket/message';
+        kh_main.service.post(link,json, function (response) { 
+            if (response.status == true) { 
+                kh_main.Loding.hide();
+                $('#message').val(undefined);
+                $('.chat .nothing:not(.temp)').remove();
+                const item = response.objectResult;
+                if (item.sender_id == getCookie("user_id")) {
+                    var row2 = $('.components .temprow .message-right').clone();
+                    if (item.answer_id == undefined) {
+                        $('.contain .reply', row2).remove();
+                    }
+                    else {
+                        $('.reply span', row2).html(item.answercontent);
+                        $('.reply span', row2).attr('data-answerid', item.answer_id);
+                    }
+                    $('.main-content', row2).html(item.content);
+                    $('.main-content', row2).attr('data-id', item.id);
+                    $('.chat').append(row2);
+                }
+    
+                //if(item.senderid != kh_main.cookie.getvalue('userid')){
+                if (item.sender_id != getCookie("user_id")) {
+                    var row = $('.components .temprow .message-left').clone();
+                    if (item.answer_id == undefined) {
+                        $('.reply', row).remove();
+                    }
+                    else {
+                        $('.reply span', row).html(item.answercontent);
+                        $('.reply span', row).attr('data-answerid', item.answer_id);
+                    }
+                    $('.main-content', row).html(item.content);
+                    $('.main-content', row).attr('data-id', item.id);
+                }
+    
+    
+            }
+            else {
+                console.log(response);
+                alert(response.message);
+            } 
+            });
+    } 
+}
+
 function SendMessage(){
     checkauth()
     if($('#message').val() != undefined || $('#message').val() != ''){
@@ -241,6 +290,85 @@ function SendMessage(){
             alert(response.message);
         } 
         });
+    }
+    else{
+        alert('مقدار نا معنبر');
+    }
+}
+
+function SendMessageFile(){
+    checkauth()
+    if($('#caption').val() != undefined || $('#caption').val() != '' &&
+    $('#file').val() != undefined || $('#file').val() != ''){
+    debugger
+    let uploadedFile = document.getElementById('file_input').files[0];
+    var form_data = new FormData();
+    form_data.append("file", uploadedFile);
+    form_data.append("sender_id", getCookie("user_id"));
+    form_data.append("support_id", $('.selected-chat').attr('data-id'));
+    form_data.append("content", $('#caption').val());
+    //SEND DATA 
+    var link = 'userticket/mfile';
+    if($('#answer_id').val() != "0"){
+    var json= {'sender_id':getCookie("user_id") , 'support_id':$('.selected-chat').attr('data-id') , 'content':$('#caption').val(),  'answer_id':$('#answer_id').val() ,'file':form_data ,}
+    }
+    else{
+    var json= {'sender_id':getCookie("user_id") ,'support_id':$('.selected-chat').attr('data-id') , 'content':$('#caption').val(),'file':form_data }      
+    }
+    alert(form_data.keys());
+    $.ajax({
+        url: 'http://localhost:8000/api/userticket/mfile',
+        type: 'POST',
+        data: form_data,
+        processData: false,
+        contentType: false,
+        success: function (response) {
+            if (response.status == true) { 
+                kh_main.Loding.hide();
+                toastr.success('پیام شما ایجاد شد');
+                $('#caption').val(undefined);
+                $('.chat .nothing:not(.temp)').remove();
+                const item = response.objectResult;
+                if (item.sender_id == getCookie("user_id")) {
+                    var row2 = $('.components .temprow .message-right').clone();
+                    if (item.answer_id == undefined) {
+                        $('.contain .reply', row2).remove();
+                    }
+                    else {
+                        $('.reply span', row2).html(item.answercontent);
+                        $('.reply span', row2).attr('data-answerid', item.answer_id);
+                    }
+                    $('.main-content', row2).html(item.content);
+                    $('.main-content', row2).attr('data-id', item.id);
+                    $('.chat').append(row2);
+                }
+    
+                //if(item.senderid != kh_main.cookie.getvalue('userid')){
+                if (item.sender_id != getCookie("user_id")) {
+                    var row = $('.components .temprow .message-left').clone();
+                    if (item.answer_id == undefined) {
+                        $('.reply', row).remove();
+                    }
+                    else {
+                        $('.reply span', row).html(item.answercontent);
+                        $('.reply span', row).attr('data-answerid', item.answer_id);
+                    }
+                    $('.main-content', row).html(item.content);
+                    $('.main-content', row).attr('data-id', item.id);
+                }
+    
+    
+            }
+            else {
+                console.log(response);
+                alert(response.message);
+            } 
+        },
+        error: function (error) {
+            console.log(error);
+        }
+    });
+
     }
     else{
         alert('مقدار نا معنبر');
