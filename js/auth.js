@@ -18,11 +18,13 @@ function checkauth(){
 }
 
 function login(){
-    if($('#username').val() != undefined || $('#username').val() != ''){
+    if($('#username').val() != undefined || $('#username').val() != '' && $('#name').val() != undefined || $('#name').val() != '' ){
         var currentDate = new Date();
         //SEND DATA 
         var link = 'auth/login';
-        var json= {'mobile':$('#username').val() }
+        var slug = getlink(gp);
+        alert(slug)
+        var json= {'mobile':$('#username').val() , 'name':$('#name').val() , 'slug':slug }
         try{
         kh_main.service.post(link,json, function (response) { 
             if (response.status == true) { 
@@ -40,11 +42,11 @@ function login(){
                 toastr.error('اطلاعات ورود اشتباه است')
             } 
         });
-    }
-    catch{
-        kh_main.Loding.hide();
-        toastr.error('اطلاعات ورود اشتباه است')
-    }
+        }
+        catch{
+            kh_main.Loding.hide();
+            toastr.error('اطلاعات ورود اشتباه است')
+        }
     }
     else{
         alert('مقدار نا معنبر');

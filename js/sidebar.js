@@ -37,7 +37,7 @@ function  Index(){
     $('.chat-head .right h3').css('display','none');
     $('.chat-head .right img').css('display','none');
     $('.chat-head .left button').css('display','none');
-    var link = 'userticket/tickets?status=all&token='+getCookie("usertoken");
+    var link = 'userticket/tickets?status=all&token='+getCookie("usertoken")+'&id='+getCookie("user_id");
     $('.send-message').css('display','none');
     nothing()
     if(window.innerWidth<920){
@@ -115,6 +115,7 @@ function GetMessage(tag){
         if (response.status == true) {     
 
             var data = response.objectResult;
+            var type = response.type;
             $('.menu').css('display','none'); 
             if(data.length== 0){
                 var row = $('.components .temprow .nothing').clone();
@@ -140,8 +141,11 @@ function GetMessage(tag){
                     $('.main-content' , row2).html(item.content);
                     $('.main-content' , row2).attr('data-id',item.id);
                     $('.rep-button' , row2).attr('data-id',item.id);
+                    $('.rep-button' , row2).attr('data-chat',id);
                     $('.rep-button' , row2).attr('data-text',item.content);
-
+                    if(type !='admin'){
+                        $('.del-button' , row2).remove();
+                    }
                     $('.chat').append(row2);
                 }
 
@@ -158,6 +162,7 @@ function GetMessage(tag){
                     $('.main-content' , row).html(item.content);
                     $('.main-content' , row).attr('data-id',item.id);
                     $('.rep-button' , row).attr('data-id',item.id);
+                    $('.rep-button' , row2).attr('data-chat',id);
                     $('.rep-button' , row).attr('data-text',item.content);
                     $('.chat').append(row);
                 }
@@ -197,14 +202,80 @@ function DeleteMessage(tag){
         checkauth()
         var link = 'userticket/delete';
         id =$(tag).attr('data-id');
+        chat = $(tag).attr('data-chat');
         var json= {'id':$(tag).attr('data-id')};
         kh_main.service.post(link,json, function (response) { 
             if (response.status == true) { 
                 kh_main.Loding.hide();
-                $(this).remove();
-                $('.chat .message-left', $(tag).attr('data-id')).remove();
+                $('.chat .message-right').remove();
+                $('.chat .message-left').remove();
                 toastr.success('پیام پاک شد');
-
+                var link = 'userticket/chats?chatinfo='+chat ;
+                kh_main.service.get(link, function (response) {
+                    kh_main.Loding.hide();
+                    if (response.status == true) {     
+            
+                        var data = response.objectResult;
+                        $('.menu').css('display','none'); 
+                        if(data.length== 0){
+                            var row = $('.components .temprow .nothing').clone();
+                            $(row).removeClass('temp');
+                            $('h3' , row).html('هنوز پیامی فرستاده نشده');
+                            $('p' , row).html('هرچی دل تنگت میخواد بنویس :)');
+                            $('.chat').append(row);
+                        }
+            
+                        for (let index = 0; index < data.length; index++) {
+            
+                            const item = data[index];
+                            //if(item.senderid = kh_main.cookie.getvalue('userid')){
+                            if(item.sender_id == getCookie("user_id")){
+                                var row2 = $('.components .temprow .message-right').clone();
+                                if(item.answer_id == undefined){
+                                   $('.contain .reply',row2).remove();
+                                }
+                                else{
+                                    $('.reply span' , row2).html(item.answercontent);
+                                    $('.reply span' , row2).attr('data-answerid',item.answer_id);
+                                }
+                                $('.main-content' , row2).html(item.content);
+                                $('.main-content' , row2).attr('data-id',item.id);
+                                $('.rep-button' , row2).attr('data-id',item.id);
+                                $('.rep-button' , row2).attr('data-chat',id);
+                                $('.rep-button' , row2).attr('data-text',item.content);
+            
+                                $('.chat').append(row2);
+                            }
+            
+                            //if(item.senderid != kh_main.cookie.getvalue('userid')){
+                            if(item.sender_id != getCookie("user_id")){
+                                var row = $('.components .temprow .message-left').clone();
+                                if(item.answer_id == undefined){
+                                   $('.contain .reply',row).remove();
+                                }
+                                else{
+                                    $('.reply span' , row).html(item.answercontent);
+                                    $('.reply span' , row).attr('data-answerid',item.answer_id);
+                                }
+                                $('.main-content' , row).html(item.content);
+                                $('.main-content' , row).attr('data-id',item.id);
+                                $('.rep-button' , row).attr('data-id',item.id);
+                                $('.rep-button' , row2).attr('data-chat',id);
+                                $('.rep-button' , row).attr('data-text',item.content);
+                                $('.chat').append(row);
+                            }
+            
+                        }
+                        if(window.innerWidth<920){     
+                            HideChats()
+                        }
+                    }
+                    else {
+                        console.log(response);
+                        alert(response.message);
+                    }
+                
+                });
             }
             else {
                 console.log(response);
